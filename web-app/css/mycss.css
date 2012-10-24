@@ -1,0 +1,147 @@
+@import url( main.css );
+
+/* layout apress */
+#page {
+	width: 900px;
+	margin: 50px auto;
+	padding: 4px 0;
+    text-align:left;
+}
+
+/* se si usa la sidebar, la larghezza deve scendere a width: 560px */
+#content {
+	float: left;
+	width: 960px;
+	color: #000;
+}
+
+#sidebar {
+	float: right;
+	width: 200px;
+	color: #000;
+	padding: 3px;
+}
+
+#topbar {
+	text-align:left;
+	width: 900px;
+	margin: 0px auto;
+	padding: 5px 0;
+}
+
+#topbar #menu {
+	float: right;
+	width: 240px;
+	text-align: right;
+	font-size: 10px;
+}
+#footer {
+    clear: both;
+    text-align: center;
+    padding: 3px;
+    border-top: 1px solid #333;
+}
+
+
+/* Icone standard */
+.menuButton a.pref {
+    background: url( ../images/skin/cog.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.report {
+    background: url( ../images/skin/report.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+/* Icone di navigazione */
+.menuButton a.primo {
+    background: url( ../images/skin/resultset_first.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.precedente {
+    background: url( ../images/skin/resultset_previous.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.successivo {
+    background: url( ../images/skin/resultset_next.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.ultimo {
+    background: url( ../images/skin/resultset_last.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.mail {
+    background: url( ../images/skin/email_add.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.emoticon {
+    background: url( ../images/skin/emoticon_tongue.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.tongue {
+    background: url( ../images/skin/emoticon_tongue.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.happy {
+    background: url( ../images/skin/emoticon_happy.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.sinistra {
+    background: url( ../images/skin/arrow_turn_left.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.destra {
+    background: url( ../images/skin/arrow_turn_right.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.importa {
+    background: url( ../images/skin/import16.gif ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.frecciasu {
+    background: url( ../images/skin/arrow_up.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.frecciagiu {
+    background: url( ../images/skin/arrow_down.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.regola {
+    background: url( ../images/skin/cog.png ) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.deleteAll {
+    background: url(../images/skin/database_delete.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.deleteAll2 {
+    background: url(../images/skin/database_table.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}

@@ -1,0 +1,10 @@
+code	type	value
+debug	string	false
+registraSempre	string	false
+usaCassetto	string	false
+usaColonne	string	false
+maxRigheCassetto	integer	50
+maxRigheColonna	integer	10
+giorniAttesa	integer	7
+summary	string	[[Utente:Biobot|Biobot]]
+version	decimal	0.0
