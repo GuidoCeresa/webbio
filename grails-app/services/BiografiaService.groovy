@@ -1,5 +1,6 @@
 import Libreria
 import org.grails.plugins.settings.Setting
+import it.algos.algospref.Preferenze
 
 class BiografiaService {
 
@@ -9,11 +10,11 @@ class BiografiaService {
     public static int idDebug4 = 3079320  //todo Margherita d'Inghilterra (1275-1318)
     public static int idDebug5 = 2978843  //todo Caroline Aaron
 
-    private static long inizio
+    private static long inizio = System.currentTimeMillis()
     private static String tagAvviso = WrapBio.tagAvviso
 
-    //public static String annoDebug = '435 a.C.'
-    public static String annoDebug = '2009'
+    public static String annoDebug = '435 a.C.'
+    //public static String annoDebug = '2009'
 
     long ultimaRegistrazione = 0
 
@@ -1386,7 +1387,7 @@ class BiografiaService {
         this.cicloNuovoContinua(true)
 
         // messaggio di log
-        log.info 'Fine nuovo ciclo completo in '+ LibBio.deltaMin(inizio) + ' minuti dal via)'
+        log.info 'Fine nuovo ciclo completo in ' + LibBio.deltaMin(inizio) + ' minuti dal via)'
     } // fine della closure
 
     /**
@@ -1643,10 +1644,19 @@ class BiografiaService {
      */
     private cicloSingola = {pageId ->
         WrapBio wrapBio
+        Biografia biografia
+
         wrapBio = new WrapBio(pageId)
-        wrapBio.getBioRegistrabile().allineata = true
-        wrapBio.registraRecordDbSql()
-        wrapBio = null
+        if (wrapBio) {
+            biografia = wrapBio.getBioRegistrabile()
+        }// fine del blocco if
+
+        if (biografia) {
+            wrapBio.getBioRegistrabile().allineata = true
+            wrapBio.registraRecordDbSql()
+            wrapBio = null
+        }// fine del blocco if
+
     } // fine della closure
 
     /**
@@ -3595,23 +3605,19 @@ class BiografiaService {
     }// fine della closure
 
     /**
-     * Restituisce il summary dal parametro Setting e dal parametro version
+     * Restituisce il summary dal parametro summary e dal parametro version
      */
     public static summarySetting = {
         // variabili e costanti locali di lavoro
         String ritorno
-        def versioneCorrente
-        String paragrafo = '8.0'
-        def ultimaVersione = 8.0
-        String iniSummary = "Biobot"
-        iniSummary += " [[Utente:Biobot"
-        iniSummary += "#"
+        String summary = Preferenze.getStr('summary')
+        String versioneCorrente = Preferenze.getStr('version')
+        String ultimaVersione = '8.0'
 
-        versioneCorrente = Setting.valueFor('version')
-        if (versioneCorrente < ultimaVersione) {
+        if (!versioneCorrente) {
             versioneCorrente = ultimaVersione
         }// fine del blocco if
-        ritorno = iniSummary + paragrafo + '|' + versioneCorrente + ']]'
+        ritorno = summary + versioneCorrente + ']]'
 
         // valore di ritorno
         return ritorno

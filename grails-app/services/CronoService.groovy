@@ -2,6 +2,7 @@ class CronoService {
 
     boolean transactional = true
     private static long inizio
+    public static String aCapo = Lib.Txt.CR
 
     // utilizzo di un service con la businessLogic
     // il service viene iniettato automaticamente
@@ -241,13 +242,6 @@ class CronoService {
         numPersone = listaBiografie.size()
         listaRighe = this.getListaRighe(mappaPersone)
 
-        // eventuale doppia colonna
-        if (BiografiaService.boolSetting('usaColonne')) {
-            if (numPersone > BiografiaService.intSetting('maxRigheColonna')) {
-                listaRighe = Lib.Wiki.listaDueColonne(listaRighe)
-            }// fine del blocco if
-        }// fine del blocco if
-
         sistemato = this.caricaPagina(service, giornoAnno, tag, titoloCassetto, numPersone, listaRighe)
 
         // valore di ritorno
@@ -338,7 +332,6 @@ class CronoService {
         String testo
         String summary = BiografiaService.summarySetting()
         def risultato
-        String aCapo = '\n'
 
         titolo = service.getTitolo(giornoAnno, tag)
         if (debug) {
@@ -348,7 +341,6 @@ class CronoService {
         testo = service.getTestoIni(giornoAnno, numPersone)
         testo += aCapo
         testo += this.costruisceTesto(titoloCassetto, numPersone, listaRighe)
-        testo += aCapo
         testo += service.getTestoEnd(giornoAnno, tag)
 
         risultato = LibBio.caricaPaginaLink(titolo, testo, summary)
@@ -387,6 +379,13 @@ class CronoService {
             testo += it
             testo += aCapo
         }// fine del blocco each
+
+        // eventuale doppia colonna
+        if (BiografiaService.boolSetting('usaColonne')) {
+            if (numPersone > BiografiaService.intSetting('maxRigheColonna')) {
+                testo = this.listaDueColonne(testo)
+            }// fine del blocco if
+        }// fine del blocco if
 
         // eventuale cassetto
         if (usaCassetto && (numPersone > maxRigheCassetto)) {
@@ -433,6 +432,28 @@ class CronoService {
                 testoOut = testoIn
                 //log.error "Ci sono degli errori nel testo del cassetto di $giorno"
             }// fine del blocco if-else
+        }// fine del blocco if
+
+        // valore di ritorno
+        return testoOut
+    }// fine della closure
+
+    /**
+     * todo da spostare in webwiki
+     * Suddivide la lista in due colonne.
+     *
+     * @param listaIn in ingresso
+     * @return listaOut in uscita
+     */
+    public static String listaDueColonne(String testoIn) {
+        String testoOut = testoIn
+
+        if (testoIn) {
+            testoOut = '{{Div col|cols=2}}'
+            testoOut += aCapo
+            testoOut += testoIn
+            testoOut += aCapo
+            testoOut += '{{Div col end}}'
         }// fine del blocco if
 
         // valore di ritorno

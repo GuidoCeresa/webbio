@@ -1,3 +1,5 @@
+import it.algos.algospref.Preferenze
+
 class AnnoService {
 
     boolean transactional = true
@@ -5,6 +7,7 @@ class AnnoService {
     public static boolean CONTROLLA_VOCE_PRINCIPALE = false
     public static boolean PATCH_ZH = false
     public static long ultimaRegistrazione = System.currentTimeMillis()
+    public static String aCapo = Lib.Txt.CR
 
     // utilizzo di un service con la businessLogic
     // il service viene iniettato automaticamente
@@ -28,8 +31,9 @@ class AnnoService {
         def listaAnniBC = null
         def listaAnniDC = null
         def dim
+        boolean debug = Preferenze.getBool('debug')
 
-        if (BiografiaService.boolSetting('debug')) {
+        if (debug) {
             if (PATCH_ZH) {
                 listaAnni = Anno.findAll()
                 listaAnni.each {
@@ -92,21 +96,23 @@ class AnnoService {
         def listaGrezza     // mappa chiave/valore = lista di progressivo, ordine, testo - una per persona
         def listaMappa      // mappa chiave/valore = lista di progressivo, ordine, testo - una per giorno
         def listaElemento   // mappa chiave/valore = lista di testo - una per giorno
+        boolean debug = Preferenze.getBool('debug')
 
-        if (BiografiaService.boolSetting('debug')) {
-            anno = Anno.findByTitolo(BiografiaService.annoDebug)
-            this.modificaPaginaPrincipale(anno)
+        if (debug) {
+            anno = Anno.findByTitolo(Preferenze.getStr('annoDebug'))
+            // this.modificaPaginaPrincipale(anno)
         }// fine del blocco if
 
-        if (BiografiaService.boolSetting('debug')) {
-            listaNomi = this.biografiaService.getListaNomi(anno, TipoDidascalia.natiAnno)
-            listaGrezza = this.biografiaService.getListaGrezza(anno, TipoDidascalia.natiAnno)
-            listaMappa = this.biografiaService.getListaMappa(anno, TipoDidascalia.natiAnno)
-            listaElemento = this.biografiaService.getListaElemento(anno, TipoDidascalia.natiAnno)
-            listaElemento = this.biografiaService.getListaElemento(anno, TipoDidascalia.mortiAnno)
-            listaNati = this.biografiaService.getLista(anno, TipoDidascalia.natiAnno)
-            listaMorti = this.biografiaService.getLista(anno, TipoDidascalia.mortiAnno)
+        if (debug) {
+            // listaNomi = this.biografiaService.getListaNomi(anno, TipoDidascalia.natiAnno)
+            // listaGrezza = this.biografiaService.getListaGrezza(anno, TipoDidascalia.natiAnno)
+            // listaMappa = this.biografiaService.getListaMappa(anno, TipoDidascalia.natiAnno)
+            // listaElemento = this.biografiaService.getListaElemento(anno, TipoDidascalia.natiAnno)
+            // listaElemento = this.biografiaService.getListaElemento(anno, TipoDidascalia.mortiAnno)
+            // listaNati = this.biografiaService.getLista(anno, TipoDidascalia.natiAnno)
+            // listaMorti = this.biografiaService.getLista(anno, TipoDidascalia.mortiAnno)
             this.caricaPaginaMorti(anno)
+            anno = null
         }// fine del blocco if
 
         if (anno) {
@@ -148,6 +154,7 @@ class AnnoService {
         Pagina pagina
         String summary = BiografiaService.summarySetting()
         def risultato
+        boolean debug = Preferenze.getBool('debug')
 
         // controllo di congruità
         if (anno && lista && tag) {
@@ -156,6 +163,9 @@ class AnnoService {
         }// fine del blocco if
 
         if (titolo && testo) {
+            if (debug) {
+                titolo = 'Utente:Gac/Sandbox1'
+            }// fine del blocco if
             risultato = LibBio.caricaPaginaLink(titolo, testo, summary)
             if ((risultato == Risultato.registrata) || (risultato == Risultato.allineata)) {
                 registrata = true
@@ -229,7 +239,6 @@ class AnnoService {
         String testoCompletoSezione
         String testoCategorie
         String testoLanguageLinks
-        String aCapo = '\n'
 
         // controllo di congruità
         if (anno) {
@@ -336,7 +345,6 @@ class AnnoService {
         int numSezMorti
         String uguale = '=='
         String spazio = Lib.Txt.SPAZIO
-        String aCapo = Lib.Txt.CR
         String pipe = '|'
         String duePunti = ':'
         String link
@@ -460,12 +468,7 @@ class AnnoService {
         }// fine del blocco if
 
         if (continua) {
-            if (BiografiaService.notBoolSetting('debug')) {
-                caricata = this.caricaPagina(anno, listaMorti, tag, numRec)
-            } else {
-                def testo = this.getTesto(anno, listaMorti, tag, numRec)
-                def stop
-            }// fine del blocco if-else
+            caricata = this.caricaPagina(anno, listaMorti, tag, numRec)
         }// fine del blocco if-else
 
         // valore di ritorno
@@ -478,7 +481,6 @@ class AnnoService {
     def getTesto = {anno, lista, tag, numRec ->
         // variabili e costanti locali di lavoro
         String testo = ''
-        String aCapo = '\n'
 
         if (anno && lista && tag && numRec) {
             testo = this.getTestoIni(anno, numRec)
@@ -505,6 +507,7 @@ class AnnoService {
             dataCorrente = WikiLib.getData('DMY')
 
             testo = "<noinclude>"
+            testo += aCapo
             testo += "{{ListaBio"
             testo += "|bio="
             testo += numRec
@@ -512,6 +515,7 @@ class AnnoService {
             testo += dataCorrente.trim()
             testo += "}}"
             testo += "{{torna a|$anno}}"
+            testo += aCapo
             testo += "</noinclude>"
         }// fine del blocco if
 
@@ -532,7 +536,6 @@ class AnnoService {
         boolean usaCassetto = BiografiaService.boolSetting('usaCassetto')
         int maxRigheCassetto = BiografiaService.intSetting('maxRigheCassetto')
         String testo = ''
-        String aCapo = '\n'
         int numPersone
         String nateMorte
         String titolo
@@ -551,7 +554,7 @@ class AnnoService {
         if (continua) {
             if (BiografiaService.boolSetting('usaColonne')) {
                 if (lista.size() > BiografiaService.intSetting('maxRigheColonna')) {
-                    lista = Lib.Wiki.listaDueColonne(lista)
+                  //  lista = Lib.Wiki.listaDueColonne(lista)
                 }// fine del blocco if
             }// fine del blocco if
         }// fine del blocco if
@@ -564,6 +567,13 @@ class AnnoService {
                     testo += aCapo
                 }//fine di each
                 testo = testo.trim()
+            }// fine del blocco if
+        }// fine del blocco if
+
+        // eventuale doppia colonna
+        if (BiografiaService.boolSetting('usaColonne')) {
+            if (lista.size() > BiografiaService.intSetting('maxRigheColonna')) {
+                testo = this.listaDueColonne(testo)
             }// fine del blocco if
         }// fine del blocco if
 
@@ -592,7 +602,6 @@ class AnnoService {
         // variabili e costanti locali di lavoro
         String testo = ''
         String prog
-        String aCapo = '\n'
         String natoMorto = natiMorti.toLowerCase()
         String titolo
 
@@ -943,7 +952,6 @@ class AnnoService {
     public static cassettoInclude = {testoIn, titolo ->
         // variabili e costanti locali di lavoro
         String testoOut = ''
-        String aCapo = '\n'
 
         // controllo di congruità
         if (testoIn) {
@@ -953,9 +961,9 @@ class AnnoService {
                 testoOut += aCapo
                 testoOut += '|larghezza=100%'
                 testoOut += aCapo
-   //levato il 8.12.11
-   //             testoOut += '|allineamento=sinistra'
-   //             testoOut += aCapo
+                //levato il 8.12.11
+                //             testoOut += '|allineamento=sinistra'
+                //             testoOut += aCapo
                 testoOut += "|titolo= $titolo"
                 testoOut += aCapo
                 testoOut += '|testo=</includeonly>'
@@ -968,6 +976,28 @@ class AnnoService {
                 testoOut = testoIn
                 //log.error "Ci sono degli errori nel testo del cassetto di $giorno"
             }// fine del blocco if-else
+        }// fine del blocco if
+
+        // valore di ritorno
+        return testoOut
+    }// fine della closure
+
+    /**
+     * todo da spostare in webwiki
+     * Suddivide la lista in due colonne.
+     *
+     * @param listaIn in ingresso
+     * @return listaOut in uscita
+     */
+    public static String listaDueColonne(String testoIn) {
+        String testoOut = testoIn
+
+        if (testoIn) {
+            testoOut = '{{Div col|cols=2}}'
+            testoOut += aCapo
+            testoOut += testoIn
+            testoOut += aCapo
+            testoOut += '{{Div col end}}'
         }// fine del blocco if
 
         // valore di ritorno

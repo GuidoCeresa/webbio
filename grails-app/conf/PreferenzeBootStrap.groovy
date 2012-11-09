@@ -45,13 +45,16 @@ class PreferenzeBootStrap {
         Preferenze pref = Preferenze.findByCode('debug')
         if (pref) {
             pref.regolaBool(false)
-      //      pref.save()
+            pref.save()
         } else {
             new Preferenze('debug', false).save()
         }// fine del blocco if-else
 
-        new Preferenze('taglioAntroponimi', 500).save()
+        new Preferenze('summary', '[[Utente:Biobot#8.0|Versione]]').save()
+        new Preferenze('version', '8.0').save()
         new Preferenze('giorniAttesa', 15).save()
+        new Preferenze('taglioAntroponimi', 500).save()
+        new Preferenze('annoDebug', '345').save()
 
         return true
     }// fine della closure

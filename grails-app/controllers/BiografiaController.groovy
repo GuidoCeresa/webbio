@@ -172,6 +172,7 @@ class BiografiaController {
         cronoService.cicloCronoNuovo()
         log.info 'Fine ciclo crono nuovo'
       //  statisticheService.uploadAll()
+        statisticheService.uploadSintesi()
         this.elaboraAllNomi()
     //    listaService.listeAll()
         log.info 'Fine ciclo nuovo continua'

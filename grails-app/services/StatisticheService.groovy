@@ -951,7 +951,6 @@ class StatisticheService {
         try { // prova ad eseguire il codice
             oldAttesa = colonnaDue.get(6)
             oldAttesa = Libreria.getNum(oldAttesa)
-          //  newAttesa = BiografiaService.intSetting('giorniAttesa')
             newAttesa = Preferenze.getInt('giorniAttesa')
 
             deltaAttesa = newAttesa - oldAttesa

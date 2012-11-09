@@ -1,7 +1,10 @@
+import it.algos.algospref.Preferenze
+
 class GiornoService {
 
     public static long ultimaRegistrazione = System.currentTimeMillis()
-    private static long inizio
+    private static long inizio = System.currentTimeMillis()
+    public static String aCapo = Lib.Txt.CR
 
     // utilizzo di un service con la businessLogic
     // il service viene iniettato automaticamente
@@ -20,11 +23,16 @@ class GiornoService {
         def listaGiorni
         int numeroGiorni = 0
         int giornoCorrente = 0
+        boolean debug = Preferenze.getBool('debug')
 
         // messaggio di log
         inizio = System.currentTimeMillis()
 
-        if (BiografiaService.boolSetting('debug')) {
+        Pagina pagina = new Pagina('Utente:Gac/Sandbox4')
+        def testo = pagina.getContenuto()
+        def stop
+
+        if (debug) {
             upload(null, giornoCorrente, numeroGiorni, false)
         } else {
             listaGiorni = Giorno.findAllBySporcoNatoOrSporcoMorto(true, true, [order: 'bisestile'])
@@ -62,18 +70,20 @@ class GiornoService {
         def listaElemento   // mappa chiave/valore = lista di testo - una per giorno
         String messaggio
         String testoInfo
+        boolean debug = Preferenze.getBool('debug')
 
-        if (BiografiaService.boolSetting('debug')) {
+        if (debug) {
             giorno = Giorno.get(21)
         }// fine del blocco if
 
-        if (BiografiaService.boolSetting('debug')) {
-            listaGrezza = this.biografiaService.getListaGrezza(giorno, TipoDidascalia.natiGiorno)
-            listaMappa = this.biografiaService.getListaMappa(giorno, TipoDidascalia.natiGiorno)
-            listaElemento = this.biografiaService.getListaElemento(giorno, TipoDidascalia.natiGiorno)
-            listaNati = this.biografiaService.getLista(giorno, TipoDidascalia.natiGiorno)
-            listaNomi = this.biografiaService.getListaNomi(giorno, TipoDidascalia.natiGiorno)
+        if (debug) {
+            // listaGrezza = this.biografiaService.getListaGrezza(giorno, TipoDidascalia.natiGiorno)
+            // listaMappa = this.biografiaService.getListaMappa(giorno, TipoDidascalia.natiGiorno)
+            // listaElemento = this.biografiaService.getListaElemento(giorno, TipoDidascalia.natiGiorno)
+            // listaNati = this.biografiaService.getLista(giorno, TipoDidascalia.natiGiorno)
+            // listaNomi = this.biografiaService.getListaNomi(giorno, TipoDidascalia.natiGiorno)
             this.caricaPaginaNati(giorno)
+            giorno = null
         }// fine del blocco if
 
         if (giorno) {
@@ -125,6 +135,7 @@ class GiornoService {
         String testo = ''
         String summary = BiografiaService.summarySetting()
         def risultato
+        boolean debug = Preferenze.getBool('debug')
 
         // controllo di congruità
         if (giorno && lista && natiMorti) {
@@ -133,7 +144,11 @@ class GiornoService {
         }// fine del blocco if
 
         if (titolo && testo) {
+            if (debug) {
+                titolo = 'Utente:Gac/Sandbox1'
+            }// fine del blocco if
             risultato = LibBio.caricaPaginaLink(titolo, testo, summary)
+
             if ((risultato == Risultato.registrata) || (risultato == Risultato.allineata)) {
                 registrata = true
             } else {
@@ -184,9 +199,7 @@ class GiornoService {
         if (giorno) {
             numRec = biografiaService.getNumRec(giorno, TipoDidascalia.natiGiorno)
             listaNati = this.biografiaService.getLista(giorno, TipoDidascalia.natiGiorno)
-            if (BiografiaService.notBoolSetting('debug')) {
-                caricata = this.caricaPagina(giorno, listaNati, natiMorti, numRec)
-            }// fine del blocco if
+            caricata = this.caricaPagina(giorno, listaNati, natiMorti, numRec)
         }// fine del blocco if
 
         // valore di ritorno
@@ -207,9 +220,7 @@ class GiornoService {
         if (giorno) {
             numRec = biografiaService.getNumRec(giorno, TipoDidascalia.mortiGiorno)
             listaMorti = this.biografiaService.getLista(giorno, TipoDidascalia.mortiGiorno)
-            if (BiografiaService.notBoolSetting('debug')) {
-                caricata = this.caricaPagina(giorno, listaMorti, natiMorti, numRec)
-            }// fine del blocco if
+            caricata = this.caricaPagina(giorno, listaMorti, natiMorti, numRec)
         }// fine del blocco if
 
         // valore di ritorno
@@ -222,7 +233,6 @@ class GiornoService {
     def getTesto = {giorno, lista, natiMorti, numRec ->
         // variabili e costanti locali di lavoro
         String testo = ''
-        String aCapo = '\n'
 
         if (giorno && lista && natiMorti && numRec) {
             testo = this.getTestoIni(giorno, numRec)
@@ -251,6 +261,7 @@ class GiornoService {
             torna = this.getTitolo2(giorno)
 
             testo = "<noinclude>"
+            testo += aCapo
             testo += "{{ListaBio"
             testo += "|bio="
             testo += numRec
@@ -258,6 +269,7 @@ class GiornoService {
             testo += dataCorrente.trim()
             testo += "}}"
             testo += "{{torna a|$torna}}"
+            testo += aCapo
             testo += "</noinclude>"
         }// fine del blocco if
 
@@ -277,14 +289,13 @@ class GiornoService {
         boolean usaCassetto = BiografiaService.boolSetting('usaCassetto')
         int maxRigheCassetto = BiografiaService.intSetting('maxRigheCassetto')
         String testo = ''
-        String aCapo = '\n'
         int numPersone
         String nateMorte
         String titolo
 
         // eventuale doppia colonna
         if (BiografiaService.boolSetting('usaColonne')) {
-            lista = Lib.Wiki.listaDueColonne(lista)
+           // lista = Lib.Wiki.listaDueColonne(lista)
         }// fine del blocco if
 
         // testo della lista
@@ -294,6 +305,11 @@ class GiornoService {
                 testo += aCapo
             }//fine di each
             testo = testo.trim()
+        }// fine del blocco if
+
+        // eventuale doppia colonna
+        if (BiografiaService.boolSetting('usaColonne')) {
+            testo = this.listaDueColonne(testo)
         }// fine del blocco if
 
         // eventuale cassetto
@@ -319,7 +335,6 @@ class GiornoService {
         // variabili e costanti locali di lavoro
         String testo = ''
         String progTre
-        String aCapo = '\n'
         String natoMorto = natiMorti.toLowerCase()
         String titolo
 
@@ -586,6 +601,28 @@ class GiornoService {
 
     /**
      * todo da spostare in webwiki
+     * Suddivide la lista in due colonne.
+     *
+     * @param listaIn in ingresso
+     * @return listaOut in uscita
+     */
+    public static String listaDueColonne(String testoIn) {
+        String testoOut = testoIn
+
+        if (testoIn) {
+            testoOut = '{{Div col|cols=2}}'
+            testoOut += aCapo
+            testoOut += testoIn
+            testoOut += aCapo
+            testoOut += '{{Div col end}}'
+        }// fine del blocco if
+
+        // valore di ritorno
+        return testoOut
+    }// fine della closure
+
+    /**
+     * todo da spostare in webwiki
      *
      * @param testoIn in ingresso
      * @return testoOut in uscita
@@ -593,7 +630,6 @@ class GiornoService {
     public static cassettoInclude = {testoIn, titolo ->
         // variabili e costanti locali di lavoro
         String testoOut = ''
-        String aCapo = '\n'
 
         // controllo di congruità
         if (testoIn) {
