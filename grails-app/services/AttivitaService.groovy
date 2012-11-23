@@ -90,7 +90,6 @@ class AttivitaService {
         def pageIds = new ArrayList()
         def numero
 
-
         records = Biografia.findAllByAttivitaLink(null)
         records.each {
             pageIds.add(it.pageid)

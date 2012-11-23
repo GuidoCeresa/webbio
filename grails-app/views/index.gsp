@@ -103,9 +103,9 @@
                 </br>
                 <span class="menuButton"><g:link controller="biografia" class="regola" action="cicloCronoNuovo"><g:message code="Ciclo crono nuovo"/></g:link></span>
                 </br>
-                <span class="menuButton"><g:link controller="biografia" class="regola" action="cicloNuovoIniziale"><g:message code="Nuovo ciclo standard (iniziale). Aggiorna, anni, giorni, antroponimi, statistiche"/></g:link></span>
+                <span class="menuButton"><g:link controller="biografia" class="regola" action="cicloNuovoIniziale"><g:message code="Nuovo ciclo standard (iniziale). Aggiorna, anni, giorni, statistiche, antroponimi, attività, nazionalità"/></g:link></span>
                 </br>
-                <span class="menuButton"><g:link controller="biografia" class="regola" action="cicloNuovoContinua"><g:message code="Nuovo ciclo standard (continua). Aggiorna, anni, giorni, antroponimi, statistiche"/></g:link></span>
+                <span class="menuButton"><g:link controller="biografia" class="regola" action="cicloNuovoContinua"><g:message code="Nuovo ciclo standard (continua). Aggiorna, anni, giorni, statistiche, antroponimi, attività, nazionalità"/></g:link></span>
 			  </br>
                 <span class="menuButton"><g:link controller="statistiche" class="regola" action="uploadAll"><g:message code="Upload tutte le statistiche"/></g:link></span>
                 </br>

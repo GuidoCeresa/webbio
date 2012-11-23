@@ -18,6 +18,7 @@ class BioDidascaliaTests extends GrailsUnitTestCase {
     // Legge una singola pagina
     void testDidascalie() {
         String titolo = 'Vasile Aaron'
+        titolo = 'Paola Antonelli'
         WrapBio bio = new WrapBio(titolo)
 
         // TipoDidascalia base (nome e cognome)

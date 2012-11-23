@@ -15,6 +15,16 @@ class BiografiaController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index = {
+
+        String risultato
+        String titolo = 'Vasile Aaron'
+        titolo = 'Paola Antonelli'
+        WrapBio bio = new WrapBio(titolo)
+        BioDidascalia didascalia
+        didascalia = new BioDidascalia(bio)
+        didascalia.setTipoDidascalia(TipoDidascalia.estesa)
+        risultato = didascalia.getTestoPulito()
+         def stop
         redirect(action: "list", params: params)
     }
 
@@ -159,7 +169,7 @@ class BiografiaController {
   //      statisticheService.uploadAll()
         statisticheService.uploadSintesi()
         this.elaboraAllNomi()
-  //      listaService.listeAll()
+        listaService.listeAll()
         log.info 'Fine ciclo nuovo iniziale'
         redirect(action: list)
     }// fine della closure
@@ -174,7 +184,7 @@ class BiografiaController {
       //  statisticheService.uploadAll()
         statisticheService.uploadSintesi()
         this.elaboraAllNomi()
-    //    listaService.listeAll()
+        listaService.listeAll()
         log.info 'Fine ciclo nuovo continua'
 
         redirect(action: list)
