@@ -2,214 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09c83443-1671-48c0-b6f6-1a360d1a9483" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/unit/PlutoControllerTests.groovy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/unit/webbio/PlutoControllerTests.groovy" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Anno.class" afterPath="$PROJECT_DIR$/target/classes/Anno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AnnoController.class" afterPath="$PROJECT_DIR$/target/classes/AnnoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AnnoService.class" afterPath="$PROJECT_DIR$/target/classes/AnnoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Antroponimo.class" afterPath="$PROJECT_DIR$/target/classes/Antroponimo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AntroponimoController.class" afterPath="$PROJECT_DIR$/target/classes/AntroponimoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AntroponimoService.class" afterPath="$PROJECT_DIR$/target/classes/AntroponimoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Attivita.class" afterPath="$PROJECT_DIR$/target/classes/Attivita.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaController.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure10.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure10_closure15.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure10_closure15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure10_closure15_closure16.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure10_closure15_closure16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure11.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure11_closure17.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure11_closure17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure11_closure17_closure18.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure11_closure17_closure18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure6.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure7.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure8.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure9.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure9_closure14.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$__clinit__closure9_closure14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$_closure4.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$_closure4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$_closure4_closure13.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$_closure4_closure13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService$_closure5.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService$_closure5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AttivitaService.class" afterPath="$PROJECT_DIR$/target/classes/AttivitaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioAttivita.class" afterPath="$PROJECT_DIR$/target/classes/BioAttivita.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioDidascalia.class" afterPath="$PROJECT_DIR$/target/classes/BioDidascalia.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioLista.class" afterPath="$PROJECT_DIR$/target/classes/BioLista.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioListaAtt.class" afterPath="$PROJECT_DIR$/target/classes/BioListaAtt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioListaAttNaz.class" afterPath="$PROJECT_DIR$/target/classes/BioListaAttNaz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioListaFin.class" afterPath="$PROJECT_DIR$/target/classes/BioListaFin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioListaNaz.class" afterPath="$PROJECT_DIR$/target/classes/BioListaNaz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioListaPar.class" afterPath="$PROJECT_DIR$/target/classes/BioListaPar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioNazionalita.class" afterPath="$PROJECT_DIR$/target/classes/BioNazionalita.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BioRiga.class" afterPath="$PROJECT_DIR$/target/classes/BioRiga.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Biografia.class" afterPath="$PROJECT_DIR$/target/classes/Biografia.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure1.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure10.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure11.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure12.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure13.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure14.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure15.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure16.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure17.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure18.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure19.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure2.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure20.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure21.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure22.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure23.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure23.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure24.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure24.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure3.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure4.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure5.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure6.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure7.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure8.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController$_closure9.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController$_closure9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaController.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BiografiaService.class" afterPath="$PROJECT_DIR$/target/classes/BiografiaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BootStrap.class" afterPath="$PROJECT_DIR$/target/classes/BootStrap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/BuildConfig.class" afterPath="$PROJECT_DIR$/target/classes/BuildConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Config.class" afterPath="$PROJECT_DIR$/target/classes/Config.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CronoBootStrap.class" afterPath="$PROJECT_DIR$/target/classes/CronoBootStrap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/CronoService.class" afterPath="$PROJECT_DIR$/target/classes/CronoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DataSource.class" afterPath="$PROJECT_DIR$/target/classes/DataSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Extra.class" afterPath="$PROJECT_DIR$/target/classes/Extra.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ExtraController.class" afterPath="$PROJECT_DIR$/target/classes/ExtraController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Giorno.class" afterPath="$PROJECT_DIR$/target/classes/Giorno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/GiornoController.class" afterPath="$PROJECT_DIR$/target/classes/GiornoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/GiornoService.class" afterPath="$PROJECT_DIR$/target/classes/GiornoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/LibAttNaz.class" afterPath="$PROJECT_DIR$/target/classes/LibAttNaz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/LibBio.class" afterPath="$PROJECT_DIR$/target/classes/LibBio.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ListaService.class" afterPath="$PROJECT_DIR$/target/classes/ListaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ListeController.class" afterPath="$PROJECT_DIR$/target/classes/ListeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Nazionalita.class" afterPath="$PROJECT_DIR$/target/classes/Nazionalita.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/NazionalitaController.class" afterPath="$PROJECT_DIR$/target/classes/NazionalitaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/NazionalitaService.class" afterPath="$PROJECT_DIR$/target/classes/NazionalitaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Nazione.class" afterPath="$PROJECT_DIR$/target/classes/Nazione.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/NazioneController.class" afterPath="$PROJECT_DIR$/target/classes/NazioneController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Ordinamento.class" afterPath="$PROJECT_DIR$/target/classes/Ordinamento.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ParBio.class" afterPath="$PROJECT_DIR$/target/classes/ParBio.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ParExtra.class" afterPath="$PROJECT_DIR$/target/classes/ParExtra.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ParGiorno.class" afterPath="$PROJECT_DIR$/target/classes/ParGiorno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/PreferenzeBootStrap.class" afterPath="$PROJECT_DIR$/target/classes/PreferenzeBootStrap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Professione.class" afterPath="$PROJECT_DIR$/target/classes/Professione.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ProfessioneController.class" afterPath="$PROJECT_DIR$/target/classes/ProfessioneController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ProfessioneService.class" afterPath="$PROJECT_DIR$/target/classes/ProfessioneService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/SettingBootStrap.class" afterPath="$PROJECT_DIR$/target/classes/SettingBootStrap.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StatisticheController.class" afterPath="$PROJECT_DIR$/target/classes/StatisticheController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/StatisticheService.class" afterPath="$PROJECT_DIR$/target/classes/StatisticheService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TempAttivita.class" afterPath="$PROJECT_DIR$/target/classes/TempAttivita.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TempBio.class" afterPath="$PROJECT_DIR$/target/classes/TempBio.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TempNazionalita.class" afterPath="$PROJECT_DIR$/target/classes/TempNazionalita.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TempNazione.class" afterPath="$PROJECT_DIR$/target/classes/TempNazione.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TempProfessione.class" afterPath="$PROJECT_DIR$/target/classes/TempProfessione.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TipoAllineamento.class" afterPath="$PROJECT_DIR$/target/classes/TipoAllineamento.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TipoPar.class" afterPath="$PROJECT_DIR$/target/classes/TipoPar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/TitoloErr.class" afterPath="$PROJECT_DIR$/target/classes/TitoloErr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/UrlMappings.class" afterPath="$PROJECT_DIR$/target/classes/UrlMappings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Voce.class" afterPath="$PROJECT_DIR$/target/classes/Voce.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBio.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBio.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioAll.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioAll.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioAnno.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioAnno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioExtra.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioExtra.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioFrequente.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioFrequente.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioGiorno.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioGiorno.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioImmortale.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioImmortale.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioIrlandesi.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioIrlandesi.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioMedio.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioMedio.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioScarso.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioScarso.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioSesso.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioSesso.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioSpeciale.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioSpeciale.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioValoriCorretti.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioValoriCorretti.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioValorizzabile.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioValorizzabile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceParBioVirgolaLuogo.class" afterPath="$PROJECT_DIR$/target/classes/VoceParBioVirgolaLuogo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/VoceStat.class" afterPath="$PROJECT_DIR$/target/classes/VoceStat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/WrapBio.class" afterPath="$PROJECT_DIR$/target/classes/WrapBio.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_layoutsmain_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_layoutsmain_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenze_form_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenze_form_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzecreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzecreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzeedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzeedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzelist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzelist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzelistcont_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzelistcont_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzeshow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzeshow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzeshowcont_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algospref_preferenzeshowcont_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_algosprefindex_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_algosprefindex_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_globalnav_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_globalnav_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_index_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_index_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_overview_summary_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_overview_summary_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_stylesheet_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_databaseMigration_dbdoc_stylesheet_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_settings_setting_dialog_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_settings_setting_dialog_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_settings_settingcache_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_settings_settingcache_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_settings_settingcreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_settings_settingcreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_settings_settingedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_settings_settingedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_settings_settinglist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_settings_settinglist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_settings_settingshow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_settings_settingshow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_annocreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_annocreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_annoedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_annoedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_annolist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_annolist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_annoshow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_annoshow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimo_form_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimo_form_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimocreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimocreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimoedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimoedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimolist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimolist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimoshow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_antroponimoshow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitacreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitacreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitaedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitaedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitalist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitalist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitashow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_attivitashow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_biografiacreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_biografiacreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_biografiaedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_biografiaedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_biografialist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_biografialist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_biografiashow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_biografiashow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_extra_form_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_extra_form_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_extracreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_extracreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_extraedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_extraedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_extralist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_extralist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_extrashow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_extrashow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_giornocreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_giornocreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_giornoedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_giornoedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_giornolist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_giornolist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_giornoshow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_giornoshow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_layoutsmain_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_layoutsmain_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_listeindex_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_listeindex_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitacreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitacreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitaedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitaedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitalist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitalist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitashow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionalitashow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazione_form_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazione_form_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionecreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionecreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazioneedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazioneedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionelist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazionelist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_nazioneshow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_nazioneshow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_professione_form_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_professione_form_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_professionecreate_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_professionecreate_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_professioneedit_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_professioneedit_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_professionelist_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_professionelist_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_professioneshow_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_professioneshow_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_statisticheextra_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_statisticheextra_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_statisticheindex_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_statisticheindex_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbio_statistichesesso_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbio_statistichesesso_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbioerror_gsp$_run_closure2.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbioerror_gsp$_run_closure2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbioerror_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbioerror_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbioindex_gsp$_run_closure2_closure6_closure10.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbioindex_gsp$_run_closure2_closure6_closure10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbioindex_gsp$_run_closure2_closure6_closure9.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbioindex_gsp$_run_closure2_closure6_closure9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webbioindex_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webbioindex_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_weblib_layoutsmain_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_weblib_layoutsmain_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_weblibindex_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_weblibindex_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webwiki_common_footer_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webwiki_common_footer_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webwiki_common_topbar_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webwiki_common_topbar_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webwiki_layoutsmain_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webwiki_layoutsmain_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webwiki_testoindex_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webwiki_testoindex_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp_webwikiindex_gsp.class" afterPath="$PROJECT_DIR$/target/classes/gsp_webwikiindex_gsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources.class" afterPath="$PROJECT_DIR$/target/classes/resources.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webbio.war" afterPath="$PROJECT_DIR$/target/webbio.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/AttivitaService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/AttivitaService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/gsp/views.properties" afterPath="$PROJECT_DIR$/target/classes/gsp/views.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/BioDidascaliaTests.groovy" afterPath="$PROJECT_DIR$/test/unit/BioDidascaliaTests.groovy" />
     </list>
     <ignored path="webbio.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
+    <file path="/Dummy.txt" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1355070727807" ignored="false" />
+    <file path="/AntroponimoService.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1355070201292" ignored="false" />
+    <file path="/a.dummy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1355070726447" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,22 +33,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/GiornoService.groovy" line="32" class="GiornoService" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
-    <breakpoint_any>
+    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
         <option name="NOTIFY_UNCAUGHT" value="true" />
@@ -252,6 +42,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -267,6 +58,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -276,14 +68,89 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/GiornoService.groovy" line="32" class="GiornoService" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="webbio" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="AntroponimoController.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/AntroponimoController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="33" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AntroponimoService.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="189" column="57" selection-start="5241" selection-end="5265" vertical-scroll-proportion="0.15400411">
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LibPref.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/algospref-0.20/src/groovy/it/algos/algospref/LibPref.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="6" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LibTesto.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/weblib-0.12/src/groovy/LibTesto.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="257" column="16" selection-start="6966" selection-end="6966" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LibBioTests.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/unit/LibBioTests.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="6" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BioDidascaliaTests.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/unit/BioDidascaliaTests.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="291" column="24" selection-start="11947" selection-end="11972" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -293,13 +160,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/grails-app/controllers/PlutoController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy" />
         <option value="$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/algospref-0.20/grails-app/domain/it/algos/algospref/Preferenze.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/StatisticheService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/AnnoService.groovy" />
@@ -312,12 +183,13 @@
         <option value="$PROJECT_DIR$/test/unit/BioDidascaliaTests.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/index.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="79" />
-    <option name="y" value="32" />
+    <option name="y" value="49" />
     <option name="width" value="1288" />
     <option name="height" value="836" />
   </component>
@@ -396,7 +268,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="grails-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -414,7 +286,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -432,48 +304,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="liste" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webbio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webbio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webbio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webbio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="AntroponimoService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ClassTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -491,6 +327,48 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio-grailsPlugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio-grailsPlugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algospref-0.20" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio-grailsPlugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algospref-0.20" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,10 +429,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="true" />
       <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -563,11 +438,7 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -595,12 +466,7 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -613,12 +479,7 @@
       <option name="VM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -633,12 +494,7 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -659,12 +515,7 @@
       </option>
       <envs />
       <patterns />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
+      <method />
     </configuration>
     <configuration default="false" name="Webbio" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="webbio" />
@@ -679,8 +530,14 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
+      <RunnerSettings RunnerId="GrailsMavenDebuggerRunner">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="GrailsMavenDebuggerRunner" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" enabled="false" />
@@ -845,18 +702,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="79" y="32" width="1288" height="836" extended-state="0" />
+    <frame x="79" y="49" width="1288" height="836" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.246875" sideWeight="0.46077034" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37062937" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40642458" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50636494" sideWeight="0.5003934" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24741448" sideWeight="0.37089872" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32587412" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23044693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293556" sideWeight="0.5948645" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -864,13 +721,15 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24741448" sideWeight="0.21825963" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936358" sideWeight="0.6704708" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2141707" sideWeight="0.67412585" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36643356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5062937" sideWeight="0.49409914" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21014492" sideWeight="0.76955307" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3659218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50418997" sideWeight="0.49409914" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32867134" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -896,7 +755,6 @@
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
@@ -906,9 +764,11 @@
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" value="boot" />
@@ -968,99 +828,97 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/groovy/LibBio.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1279" column="38" selection-start="44063" selection-end="44110" vertical-scroll-proportion="0.022222223" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/webwiki-0.12/src/groovy/TipoPagina.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="183" selection-end="183" vertical-scroll-proportion="0.21802326" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/BiografiaService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3603" column="48" selection-start="126240" selection-end="126240" vertical-scroll-proportion="0.022222223" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/CronoService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="318" column="51" selection-start="11778" selection-end="11778" vertical-scroll-proportion="0.022970904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/AttivitaService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="18" selection-start="6404" selection-end="6404" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/groovy/BioNazionalita.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="198" column="20" selection-start="6061" selection-end="6061" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/biografia/list.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="58" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.39097744" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/BioDidascaliaTests.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="24" selection-start="11947" selection-end="11972" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/groovy/BioAttivita.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="40" selection-start="7211" selection-end="7211" vertical-scroll-proportion="0.021802325">
-          <folding />
-        </state>
+        <state line="227" column="40" selection-start="7211" selection-end="7211" vertical-scroll-proportion="0.021802325" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/groovy/BioDidascalia.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="61" selection-start="619" selection-end="619" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="22" column="61" selection-start="619" selection-end="619" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="236" selection-start="4675" selection-end="4675" vertical-scroll-proportion="0.5852535">
-          <folding />
-        </state>
+        <state line="108" column="236" selection-start="4675" selection-end="4675" vertical-scroll-proportion="0.5852535" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/liste/index.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/ListeController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="6" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/ListaService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="11" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="34" column="11" selection-start="1518" selection-end="1518" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/StatisticheService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="11" selection-start="6077" selection-end="6077" vertical-scroll-proportion="0.036319613" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="4" selection-start="6032" selection-end="6032" vertical-scroll-proportion="0.52380955">
+        <state line="184" column="34" selection-start="5989" selection-end="5989" vertical-scroll-proportion="0.03846154" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/LibBioTests.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/BioDidascaliaTests.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="291" column="24" selection-start="11947" selection-end="11972" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/AntroponimoController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="33" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/weblib-0.12/src/groovy/LibTesto.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="257" column="16" selection-start="6966" selection-end="6966" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/algospref-0.20/src/groovy/it/algos/algospref/LibPref.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="6" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="57" selection-start="5241" selection-end="5265" vertical-scroll-proportion="0.15400411">
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

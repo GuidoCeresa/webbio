@@ -1,3 +1,4 @@
+import it.algos.algospref.LibPref
 import it.algos.algospref.Preferenze
 
 class AntroponimoService {
@@ -57,20 +58,16 @@ class AntroponimoService {
 
     // Elabora tutte le pagine
     def elaboraAllNomi = {
+        ArrayList<String> listaNomi
         String query = 'select nome from Antroponimo where voci>'
         query += taglio
         query += ' order by nome'
-        String query2
-        ArrayList<String> listaNomi
-        ArrayList<String> listaVoci = new ArrayList<String>()
-        int k = 0
 
+        //esegue la query
         listaNomi = Antroponimo.executeQuery(query)
 
         //crea la pagina di controllo didascalie
-        if (true) {
-            this.creaPaginaDidascalie()
-        }// fine del blocco if
+        this.creaPaginaDidascalie()
 
         //@todo controllo provvisorio?
         if (!Pagina.login) {
@@ -78,20 +75,15 @@ class AntroponimoService {
             Pagina.login = new Login('it', 'Biobot', 'fulvia')
         }// fine del blocco if
 
-        //crea le pagine dei singoli nomi
-        if (true) {//@todo provvisorio
-            listaNomi?.each {
-                k++
-                if (elaboraSingoloNome(it)) {
-                }// fine del blocco if
-            }// fine del ciclo each
-        }// fine del blocco if
-
         //crea la pagina riepilogativa
         if (listaNomi) {
             creaPaginaRiepilogativa(listaNomi)
         }// fine del blocco if
 
+        //crea le pagine dei singoli nomi
+        listaNomi?.each {
+            elaboraSingoloNome(it)
+        }// fine del ciclo each
     }// fine del metodo
 
     /**
@@ -109,7 +101,7 @@ class AntroponimoService {
         testo += getRiepilogoFooter()
 
         Pagina pagina = new Pagina(titolo)
-        risultato = pagina.scrive(testo)
+        pagina.scrive(testo)
     }// fine del metodo
 
 
@@ -150,21 +142,8 @@ class AntroponimoService {
         testo += ' ricorrenze nelle voci biografiche'
         testo += aCapo
 
-        //mappa = alfabetizza(listaVoci)
-        //if (mappa) {
-        //    mappa?.each {
-        //        chiave = it.key
-        //        lista = mappa.get(chiave)
-        //        testo += '=='
-        //        testo += chiave
-        //        testo += '=='
-        //        testo += aCapo
-        //        testo += getParagrafo(lista)
-        //        testo += aCapo
-        //        testo += aCapo
-        //    }// fine del ciclo each
-        //}// fine del blocco if
-
+        testo += aCapo
+        testo += '{{Div col|cols=3}}'
         if (listaVoci) {
             listaVoci.each {
                 nome = it
@@ -172,6 +151,8 @@ class AntroponimoService {
                 testo += this.getRiga(nome)
             }// fine del ciclo each
         }// fine del blocco if
+        testo += aCapo
+        testo += '{{Div col end}}'
         testo += aCapo
 
         return testo
@@ -194,7 +175,9 @@ class AntroponimoService {
 
     public String getRiga(String nome) {
         String testo = ''
-        String tag = ''
+        String tag
+        String aCapo = '\n'
+        String numVoci
 
         if (nome) {
             tag = tagTitolo + nome
@@ -204,8 +187,15 @@ class AntroponimoService {
             testo += '|'
             testo += nome
             testo += ']]'
-            testo += '\n'
+            if (LibPref.getBool('usaOccorrenzeAntroponimi')) {
+                numVoci = getRicorrenzePerNome(nome)
+                testo += ' ('
+                testo += numVoci
+                testo += ' )'
+            }// fine del blocco if
+            testo += aCapo
         }// fine del blocco if
+
 
         return testo.trim()
     }// fine del metodo
@@ -663,7 +653,7 @@ class AntroponimoService {
     /**
      * Controlla se il numero passato è un multiplo esatto
      */
-    private isStep = {int numero, int intervallo ->
+    private isStep = { int numero, int intervallo ->
         // variabili e costanti locali di lavoro
         boolean step = false
         def delta
@@ -915,6 +905,32 @@ class AntroponimoService {
         }// fine del blocco if
 
         return elaborata
+    }// fine del metodo
+
+    /**
+     * Elabora il numero di occorrenze per un singolo nome
+     */
+    public String getRicorrenzePerNome(String nome) {
+        String ricorrenze = ''
+        def temp
+        def risultato
+        String query
+
+        query = "SELECT count(*) from Biografia where nome="
+        query += "'"
+        query += nome
+        query += "'"
+
+        risultato = Biografia.executeQuery(query)
+
+        if (risultato && risultato.size() == 1) {
+            if (risultato[0] instanceof Long) {
+                temp = risultato[0]
+                ricorrenze = LibTesto.formatNum((String)temp)
+            }// fine del blocco if
+        }// fine del blocco if
+
+        return ricorrenze
     }// fine del metodo
 
 }// fine della classe
