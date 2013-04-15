@@ -1615,13 +1615,19 @@ class BiografiaService {
      */
     private cicloSingolaMappa = {mappa ->
         WrapBio wrapBio
+        Biografia bio
 
         if (mappa in HashMap) {
             wrapBio = new WrapBio(mappa)
             if (wrapBio) {
                 if (wrapBio.isBio()) {
-                    wrapBio.getBioRegistrabile().allineata = true
-                    wrapBio.registraRecordDbSql()
+                    bio = wrapBio.getBioRegistrabile()
+                    if (bio) {
+                        bio.allineata = true
+                        wrapBio.registraRecordDbSql()
+                    } else {
+                        log.warn 'WARN - La voce ' + wrapBio.getTitoloVoce() + ' non ha la biografia registrabile'
+                    }// fine del blocco if-else
                     wrapBio = null
                 } else {
                     wrapBio.getTitoloVoce()

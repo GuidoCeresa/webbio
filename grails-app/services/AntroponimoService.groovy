@@ -12,7 +12,8 @@ class AntroponimoService {
     def taglio = Preferenze.getInt('taglioAntroponimi')
 
     def spazzola() {
-        String query = 'select distinct nome from Biografia order by nome'
+        String query = 'select distinct binary nome from Biografia order by nome'
+
         ArrayList listaNomi = Biografia.executeQuery(query)
         listaNomi = this.checkAll(listaNomi)
 
@@ -66,6 +67,11 @@ class AntroponimoService {
         //esegue la query
         listaNomi = Antroponimo.executeQuery(query)
 
+        //crea le pagine dei singoli nomi
+        listaNomi?.each {
+            elaboraSingoloNome(it)
+        }// fine del ciclo each
+
         //crea la pagina di controllo didascalie
         this.creaPaginaDidascalie()
 
@@ -80,10 +86,6 @@ class AntroponimoService {
             creaPaginaRiepilogativa(listaNomi)
         }// fine del blocco if
 
-        //crea le pagine dei singoli nomi
-        listaNomi?.each {
-            elaboraSingoloNome(it)
-        }// fine del ciclo each
     }// fine del metodo
 
     /**
@@ -354,12 +356,15 @@ class AntroponimoService {
         String data = WikiLib.getData('DMY').trim()
         String aCapo = '\n'
         String numero = ''
+        boolean eliminaIndice = false
 
         if (num) {
             numero = Lib.Txt.formatNum(num.toString())
         }// fine del blocco if
 
-        testo += '__NOTOC__'
+        if (eliminaIndice) {
+            testo += '__NOTOC__'
+        }// fine del blocco if
         testo += '<noinclude>'
         testo += "{{StatBio"
         if (numero) {
@@ -372,13 +377,64 @@ class AntroponimoService {
     }// fine del metodo
 
 
-    public String getNomeBody(def listaVoci) {
+    public String getNomeBody(ArrayList listaVoci, String nome) {
+        String testo = ''
+        String tagMaschio = 'M'
+        String tagFemmina = 'F'
+        ArrayList listaVociMaschili
+        ArrayList listaVociFemminili
+        boolean usaPrimoLivello = false
+
+        listaVociMaschili = this.selezionaGenere(listaVoci, tagMaschio)
+        listaVociFemminili = this.selezionaGenere(listaVoci, tagFemmina)
+
+        if (listaVociMaschili && listaVociFemminili) {
+            usaPrimoLivello = true
+            testo += '\n=Uomini=\n'
+            testo += this.getNomeBodyBase(listaVociMaschili)
+            testo += '\n=Donne=\n'
+            testo += this.getNomeBodyBase(listaVociFemminili)
+        } else {
+            if (listaVociMaschili) {
+                testo += this.getNomeBodyBase(listaVociMaschili)
+            }// fine del blocco if
+            if (listaVociFemminili) {
+                testo += this.getNomeBodyBase(listaVociFemminili)
+            }// fine del blocco if
+        }// fine del blocco if-else
+
+        //footer
+        testo += this.getNomeFooter(nome, usaPrimoLivello)
+
+        return testo
+    }// fine del metodo
+
+
+    public ArrayList selezionaGenere(ArrayList listaVoci, String tag) {
+        ArrayList lista = null
+        Biografia bio
+
+        if (listaVoci && listaVoci.size() > 0 && tag) {
+            lista = new ArrayList()
+            listaVoci?.each {
+                bio = (Biografia) it
+                if (bio.sesso.equals(tag)) {
+                    lista.add(bio)
+                }// fine del blocco if
+            } // fine del ciclo each
+        }// fine del blocco if
+
+        return lista
+    }// fine del metodo
+
+    public String getNomeBodyBase(ArrayList listaVoci) {
         String testo = ''
         Map mappa
         String aCapo = '\n'
         String chiave
         def lista
         int num = 0
+        String tag = '=='
 
         mappa = this.getMappaAttività(listaVoci)
         mappa = this.ordinaMappa(mappa)
@@ -387,9 +443,9 @@ class AntroponimoService {
                 chiave = it.key
                 lista = mappa.get(chiave)
                 num += lista.size()
-                testo += '=='
+                testo += tag
                 testo += chiave
-                testo += '=='
+                testo += tag
                 testo += aCapo
                 testo += getParagrafoDidascalia(lista)
                 testo += aCapo
@@ -400,12 +456,15 @@ class AntroponimoService {
         return testo
     }// fine del metodo
 
-
-    public String getNomeFooter(String nome) {
+    public String getNomeFooter(String nome, boolean usaPrimoLivello) {
         String testo = ''
         String aCapo = '\n'
 
-        testo += '==Voci correlate=='
+        if (usaPrimoLivello) {
+            testo += '=Voci correlate='
+        } else {
+            testo += '==Voci correlate=='
+        }// fine del blocco if-else
         testo += aCapo
         testo += aCapo
         testo += '*[[Progetto:Antroponimi/Nomi]]'
@@ -683,12 +742,12 @@ class AntroponimoService {
      */
     public Map ordinaMappa(Map mappaIn) {
         // variabili e costanti locali di lavoro
-        Map mappaOut = null
+        Map mappaOut = mappaIn
         ArrayList<String> listaChiavi
         String chiave
         def valore
 
-        if (mappaIn && mappaIn.size() > 0) {
+        if (mappaIn && mappaIn.size() > 1) {
             listaChiavi = mappaIn.keySet()
             listaChiavi.remove(tagPunti) //elimino l'asterisco (per metterlo in fondo)
             listaChiavi.sort()
@@ -875,7 +934,7 @@ class AntroponimoService {
         String query
         String testo = ''
         String titolo
-        def listaVoci
+        ArrayList listaVoci
         Risultato risultato
 
         titolo = tagTitolo + nome
@@ -894,11 +953,8 @@ class AntroponimoService {
             //header
             testo += this.getNomeHead(listaVoci.size())
 
-            //body
-            testo += this.getNomeBody(listaVoci)
-
-            //footer
-            testo += this.getNomeFooter(nome)
+            //body && footer
+            testo += this.getNomeBody(listaVoci, nome)
 
             Pagina pagina = new Pagina(titolo)//@todo prvvisorio
             risultato = pagina.scrive(testo)
@@ -926,7 +982,7 @@ class AntroponimoService {
         if (risultato && risultato.size() == 1) {
             if (risultato[0] instanceof Long) {
                 temp = risultato[0]
-                ricorrenze = LibTesto.formatNum((String)temp)
+                ricorrenze = LibTesto.formatNum((String) temp)
             }// fine del blocco if
         }// fine del blocco if
 
