@@ -12,14 +12,33 @@ class AntroponimoService {
     def taglio = Preferenze.getInt('taglioAntroponimi')
 
     def spazzola() {
-        String query = 'select distinct binary nome from Biografia order by nome'
+        String query
+        ArrayList listaNomiCompleta
+        ArrayList listaNomiControllati
+        ArrayList listaNomiUniciDiversiPerAccento = new ArrayList()
+        String nome
 
-        ArrayList listaNomi = Biografia.executeQuery(query)
-        listaNomi = this.checkAll(listaNomi)
+        //--recupera una lista 'grezza' di tutti i nomi
+        query = 'select nome from Biografia where id<10000 order by nome'
+        listaNomiCompleta = Biografia.executeQuery(query)
 
+        //--elimina tutto ciò che compare oltre al nome
+        listaNomiControllati = this.checkAll(listaNomiCompleta)
+
+        //--costruisce una lista di nomi 'unici'
+        //--i nomi sono differenziati in base all'accento
+        listaNomiControllati?.each {
+            nome = (String) it
+            if (!listaNomiUniciDiversiPerAccento.contains(nome)) {
+                listaNomiUniciDiversiPerAccento.add(nome)
+            }// fine del blocco if
+        } // fine del ciclo each
+
+        //--cancella i records di antroponimi
         this.cancellaTutto()
 
-        this.spazzolaPacchetto(listaNomi)
+        //--ricostruisce i records di antroponimi
+        this.spazzolaPacchetto(listaNomiUniciDiversiPerAccento)
     }// fine del metodo
 
     def spazzolaPacchetto(ArrayList listaNomi) {
@@ -42,7 +61,6 @@ class AntroponimoService {
                         dim = nome.length()
                         antroponimo = new Antroponimo(nome: nome, voci: voci, dim: dim).save()
                         y++
-                        def stop
                     }// fine del blocco if
                 }// fine del blocco if-else
             }// fine del blocco if
@@ -53,8 +71,9 @@ class AntroponimoService {
         def recs = Antroponimo.findAll()
 
         recs?.each {
-            it.delete()
-        }
+            it.delete(flush: true)
+        } // fine del ciclo each
+
     }// fine del metodo
 
     // Elabora tutte le pagine
@@ -95,8 +114,6 @@ class AntroponimoService {
         String testo = ''
         String titolo = progetto + 'Nomi'
         Risultato risultato
-
-        //   titolo = 'Utente:Gac/Sandbox7'
 
         testo += getRiepilogoHead()
         testo += getRiepilogoBody(listaVoci)
@@ -934,8 +951,11 @@ class AntroponimoService {
         String query
         String testo = ''
         String titolo
-        ArrayList listaVoci
+        ArrayList listaVociCompletaPerNomeSenzaDifferenzeAccenti
+        ArrayList listaVociNomiUniciDiversiPerAccento = new ArrayList()
         Risultato risultato
+        Biografia bio
+        String nomeBio
 
         titolo = tagTitolo + nome
 
@@ -945,16 +965,26 @@ class AntroponimoService {
         query += "'"
         query += " order by cognome"
 
-        listaVoci = Biografia.executeQuery(query)
+        listaVociCompletaPerNomeSenzaDifferenzeAccenti = Biografia.executeQuery(query)
 
-        if (listaVoci && listaVoci.size() > taglio) {
+        //--costruisce una lista di nomi 'unici'
+        //--i nomi sono differenziati in base all'accento
+        listaVociCompletaPerNomeSenzaDifferenzeAccenti?.each {
+            bio = (Biografia) it
+            nomeBio = bio.nome
+            if (nomeBio.equalsIgnoreCase(nome)) {
+                listaVociNomiUniciDiversiPerAccento.add(bio)
+            }// fine del blocco if
+        } // fine del ciclo each
+
+        if (listaVociNomiUniciDiversiPerAccento && listaVociNomiUniciDiversiPerAccento.size() > taglio) {
             elaborata = true
 
             //header
-            testo += this.getNomeHead(listaVoci.size())
+            testo += this.getNomeHead(listaVociNomiUniciDiversiPerAccento.size())
 
             //body && footer
-            testo += this.getNomeBody(listaVoci, nome)
+            testo += this.getNomeBody(listaVociNomiUniciDiversiPerAccento, nome)
 
             Pagina pagina = new Pagina(titolo)//@todo prvvisorio
             risultato = pagina.scrive(testo)
