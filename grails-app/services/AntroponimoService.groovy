@@ -19,7 +19,7 @@ class AntroponimoService {
         String nome
 
         //--recupera una lista 'grezza' di tutti i nomi
-        query = 'select nome from Biografia where id<10000 order by nome'
+        query = 'select nome from Biografia order by nome'
         listaNomiCompleta = Biografia.executeQuery(query)
 
         //--elimina tutto ciò che compare oltre al nome
