@@ -23,12 +23,13 @@ class AntroponimoService {
         listaNomiCompleta = Biografia.executeQuery(query)
 
         //--elimina tutto ciò che compare oltre al nome
-        listaNomiControllati = this.checkAll(listaNomiCompleta)
+        listaNomiControllati = checkAll(listaNomiCompleta)
 
         //--costruisce una lista di nomi 'unici'
         //--i nomi sono differenziati in base all'accento
         listaNomiControllati?.each {
             nome = (String) it
+            nome=LibTesto.primaMaiuscola(nome)
             if (!listaNomiUniciDiversiPerAccento.contains(nome)) {
                 listaNomiUniciDiversiPerAccento.add(nome)
             }// fine del blocco if
@@ -42,30 +43,41 @@ class AntroponimoService {
     }// fine del metodo
 
     def spazzolaPacchetto(ArrayList listaNomi) {
-        Antroponimo antroponimo
         String nome
-        int dim = 0
-        int voci = 0
-        int k = 0
-        int y = 0
 
-        listaNomi?.each {
-            nome = it
-            k++
-            if (nome) {
-                antroponimo = Antroponimo.findByNome(nome)
-                if (antroponimo) {
-                } else {
-                    voci = Biografia.countByNome(nome)
-                    if (voci > 0) {
-                        dim = nome.length()
-                        antroponimo = new Antroponimo(nome: nome, voci: voci, dim: dim).save()
-                        y++
-                    }// fine del blocco if
-                }// fine del blocco if-else
-            }// fine del blocco if
-        }// fine del ciclo each
+        if (listaNomi && listaNomi.size() > 0) {
+            listaNomi?.each {
+                nome = it
+                spazzolaNome(nome)
+            }// fine del ciclo each
+        }// fine del blocco if
     }// fine del metodo
+
+    def spazzolaNome(String nome) {
+        int dim
+        int voci = 0
+        ArrayList listaVociStessoNomeAccentiDiversi
+        Biografia bio
+        String nomeBio
+
+        if (nome) {
+            listaVociStessoNomeAccentiDiversi = Biografia.findAllByNome(nome)
+            //--i nomi sono differenziati in base all'accento
+            listaVociStessoNomeAccentiDiversi?.each {
+                bio = (Biografia) it
+                nomeBio = bio.nome
+                if (nomeBio.equalsIgnoreCase(nome)) {
+                    voci++
+                }// fine del blocco if
+            } // fine del ciclo each
+            if (voci > 0) {
+                dim = nome.length()
+                new Antroponimo(nome: nome, voci: voci, dim: dim).save()
+            }// fine del blocco if
+        }// fine del blocco if
+
+    }// fine del metodo
+
 
     def cancellaTutto() {
         def recs = Antroponimo.findAll()
@@ -622,20 +634,29 @@ class AntroponimoService {
     }// fine del metodo
 
 
-    private String check(String nomeIn) {
+    private static String check(String nomeIn) {
         String nomeOut = ''
+        ArrayList listaTagContenuto = new ArrayList()
+        ArrayList listaTagIniziali = new ArrayList()
         int pos
         String tagSpazio = ' '
-        String tagRef = '<ref'
-        String tagTrattino = '-'
-        String tagApicetti = '"'
-        String tagApice = "'"
-        String tagApostrofo = 'ʿ'
-        String tagApostrofo2 = '‘'
-        String tagApostrofo3 = '‛'
-        String tagQuadra = '['
-        String tagParentesi = "("
-        String tagPunti = "."
+
+        listaTagContenuto.add(['<ref'])
+        listaTagContenuto.add(['-'])
+
+        listaTagIniziali.add('"')
+        listaTagIniziali.add("'")//apice
+        listaTagIniziali.add('ʿ')//apostrofo
+        listaTagIniziali.add('‘')//altro tipo di apostrofo
+        listaTagIniziali.add('‛')//altro tipo di apostrofo
+        listaTagIniziali.add('[')
+        listaTagIniziali.add('(')
+        listaTagIniziali.add('.')
+        listaTagIniziali.add('<!--')
+        listaTagIniziali.add('{')
+        listaTagIniziali.add('&')
+
+        String tag = ''
 
         if (nomeIn.length() < 100) {
             nomeOut = nomeIn
@@ -646,56 +667,28 @@ class AntroponimoService {
                 nomeOut = nomeOut.trim()
             }// fine del blocco if
 
-            if (nomeOut.contains(tagRef)) {
-                pos = nomeOut.indexOf(tagRef)
-                nomeOut = nomeOut.substring(0, pos)
-                nomeOut = nomeOut.trim()
-            }// fine del blocco if
+            listaTagContenuto?.each {
+                if (nomeOut.contains((String) it)) {
+                    pos = nomeOut.indexOf((String) it)
+                    nomeOut = nomeOut.substring(0, pos)
+                    nomeOut = nomeOut.trim()
+                }// fine del blocco if
+            } // fine del ciclo each
 
-            if (nomeOut.contains(tagTrattino)) {
-                pos = nomeOut.indexOf(tagTrattino)
-                nomeOut = nomeOut.substring(0, pos)
-                nomeOut = nomeOut.trim()
-            }// fine del blocco if
+            listaTagIniziali?.each {
+                tag = (String) it
 
-            if (nomeOut.startsWith(tagApicetti)) {
-                nomeOut = ''
-            }// fine del blocco if
-
-            if (nomeOut.startsWith(tagApice)) {
-                nomeOut = ''
-            }// fine del blocco if
-
-            if (nomeOut.startsWith(tagApostrofo)) {
-                nomeOut = ''
-            }// fine del blocco if
-
-            if (nomeOut.startsWith(tagApostrofo2)) {
-                nomeOut = ''
-            }// fine del blocco if
-
-            if (nomeOut.startsWith(tagApostrofo3)) {
-                nomeOut = ''
-            }// fine del blocco if
-
-            if (nomeOut.startsWith(tagQuadra)) {
-                nomeOut = ''
-            }// fine del blocco if
-
-            if (nomeOut.startsWith(tagParentesi)) {
-                nomeOut = ''
-            }// fine del blocco if
-
-            if (nomeOut.startsWith(tagPunti)) {
-                nomeOut = ''
-            }// fine del blocco if
+                if (nomeOut.startsWith(tag)) {
+                    nomeOut = ''
+                }// fine del blocco if
+            } // fine del ciclo each
 
         }// fine del blocco if-else
 
         return nomeOut
     }// fine del metodo
 
-    private ArrayList checkAll(ArrayList listaIn) {
+    private static ArrayList checkAll(ArrayList listaIn) {
         ArrayList listaOut = null
         String nomeDaControllare
         String nomeValido = ' '
@@ -705,12 +698,8 @@ class AntroponimoService {
 
             listaIn.each {
                 nomeDaControllare = it
-                nomeValido = this.check(nomeDaControllare)
-                if (nomeValido) {
-                    if (!listaOut.contains(nomeValido)) {
-                        listaOut.add(nomeValido)
-                    }// fine del blocco if
-                }// fine del blocco if
+                nomeValido = check(nomeDaControllare)
+                listaOut.add(nomeValido)
             }// fine del ciclo each
         }// fine del blocco if
 

@@ -24,7 +24,7 @@ class AntroponimoController {
     }// fine della closure
 
     def list = {
-        params.max = Math.min(params.max ? params.max.toInteger() : 10, 100)
+        params.max = Math.min(params.max ? params.max.toInteger() : 1000, 1000)
         [antroponimoInstanceList: Antroponimo.list(params), antroponimoInstanceTotal: Antroponimo.count()]
     }
 
