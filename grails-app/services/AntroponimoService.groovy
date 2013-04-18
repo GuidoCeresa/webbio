@@ -10,9 +10,10 @@ class AntroponimoService {
     private boolean linkAlProgetto = false
     private String progetto = 'Progetto:Antroponimi/'
     def taglio = Preferenze.getInt('taglioAntroponimi')
+    def soglia = Preferenze.getInt('sogliaAntroponimi')
 
     def elencoNomi() {
-        int soglia = 50
+        String titolo = 'Progetto:Antroponimi/Liste'
         String aCapo = '\n'
         int k = 0
         String numNomi = Antroponimo.count() + ''
@@ -28,30 +29,6 @@ class AntroponimoService {
         def mappa = new HashMap()
         String nome
         int voci
-
-        testoTitolo = '<noinclude>'
-        testoTitolo += "{{StatBio|data=$data}}"
-        testoTitolo += '</noinclude>'
-        testoTitolo += aCapo
-        testoTitolo += '==Nomi=='
-        testoTitolo += aCapo
-        testoTitolo += "Elenco dei '''"
-        testoTitolo += LibTesto.formatNum(numNomi)
-        testoTitolo += "''' nomi '''differenti''' "
-        testoTitolo += "<ref>Gli apostrofi vengono rispettati. Pertanto: María, Marià, Maria, Mária, Marìa, Mariâ sono nomi diversi</ref>"
-        testoTitolo += "<ref>I nomi ''doppi'' (Maria Cristina), non vengono considerati nella loro completezza, ma si utilizza solo la componente prima dello spazio</ref>"
-        testoTitolo += "<ref>Per motivi tecnici, non vengono riportati nomi che iniziano con apici od apostrofi</ref>"
-        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''['''</ref>"
-        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''{'''</ref>"
-        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''('''</ref>"
-        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''.'''</ref>"
-        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''&'''</ref>"
-        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''<'''</ref>"
-        testoTitolo += " utilizzati nelle '''"
-        testoTitolo += LibTesto.formatNum(numBio)
-        testoTitolo += "''' voci biografiche"
-        testoTitolo += aCapo
-        testoTitolo += aCapo
 
         listaNomi = Antroponimo.findAllByVociGreaterThan(soglia)
         lista.add(['#', 'Nome', 'Voci'])
@@ -72,6 +49,33 @@ class AntroponimoService {
         mappa.putAt('align', TipoAllineamento.secondaSinistra)
         testoTabella = LibBio.creaTabellaSortable(mappa)
 
+        testoTitolo = '<noinclude>'
+        testoTitolo += "{{StatBio|data=$data}}"
+        testoTitolo += '</noinclude>'
+        testoTitolo += aCapo
+        testoTitolo += '==Nomi=='
+        testoTitolo += aCapo
+        testoTitolo += "Elenco dei '''"
+        testoTitolo += LibTesto.formatNum((String) k)
+        testoTitolo += "''' nomi '''differenti''' "
+        testoTitolo += "<ref>Gli apostrofi vengono rispettati. Pertanto: '''María, Marià, Maria, Mária, Marìa, Mariâ''' sono nomi diversi</ref>"
+        testoTitolo += "<ref>I nomi ''doppi'' ('''Maria Cristina'''), non vengono considerati nella loro completezza, ma si utilizza solo la componente prima dello spazio</ref>"
+        testoTitolo += "<ref>Per motivi tecnici, non vengono riportati nomi che iniziano con '''apici''' od '''apostrofi'''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''['''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''{'''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''('''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''.'''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''&'''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''<'''</ref>"
+        testoTitolo += " utilizzati nelle '''"
+        testoTitolo += LibTesto.formatNum(numBio)
+        testoTitolo += "''' voci biografiche con occorrenze maggiori di '''"
+        testoTitolo += soglia
+        testoTitolo += "'''"
+        testoTitolo += aCapo
+        testoTitolo += aCapo
+
+
         testoFooter = aCapo
         testoFooter += '==Note=='
         testoFooter += aCapo
@@ -89,7 +93,7 @@ class AntroponimoService {
         testoFooter += '<noinclude>[[Categoria:Liste di persone per nome| ]]</noinclude>'
 
         testo = testoTitolo + testoTabella + testoFooter
-        Pagina.scriveTesto('Utente:Gac/Sandbox7', testo, 'test')
+        Pagina.scriveTesto(titolo, testo, 'test')
 
     }// fine del metodo
 
@@ -494,28 +498,28 @@ class AntroponimoService {
         String tagFemmina = 'F'
         ArrayList listaVociMaschili
         ArrayList listaVociFemminili
-        boolean usaPrimoLivello = false
+        boolean usaSecondoLivello = true
 
         listaVociMaschili = this.selezionaGenere(listaVoci, tagMaschio)
         listaVociFemminili = this.selezionaGenere(listaVoci, tagFemmina)
 
         if (listaVociMaschili && listaVociFemminili) {
-            usaPrimoLivello = true
-            testo += '\n=Uomini=\n'
-            testo += this.getNomeBodyBase(listaVociMaschili)
-            testo += '\n=Donne=\n'
-            testo += this.getNomeBodyBase(listaVociFemminili)
+            usaSecondoLivello = false
+            testo += '\n==Uomini==\n'
+            testo += this.getNomeBodyBase(listaVociMaschili, usaSecondoLivello)
+            testo += '\n==Donne==\n'
+            testo += this.getNomeBodyBase(listaVociFemminili, usaSecondoLivello)
         } else {
             if (listaVociMaschili) {
-                testo += this.getNomeBodyBase(listaVociMaschili)
+                testo += this.getNomeBodyBase(listaVociMaschili, usaSecondoLivello)
             }// fine del blocco if
             if (listaVociFemminili) {
-                testo += this.getNomeBodyBase(listaVociFemminili)
+                testo += this.getNomeBodyBase(listaVociFemminili, usaSecondoLivello)
             }// fine del blocco if
         }// fine del blocco if-else
 
         //footer
-        testo += this.getNomeFooter(nome, usaPrimoLivello)
+        testo += this.getNomeFooter(nome)
 
         return testo
     }// fine del metodo
@@ -538,7 +542,7 @@ class AntroponimoService {
         return lista
     }// fine del metodo
 
-    public String getNomeBodyBase(ArrayList listaVoci) {
+    public String getNomeBodyBase(ArrayList listaVoci, boolean usaSecondoLivello) {
         String testo = ''
         Map mappa
         String aCapo = '\n'
@@ -546,6 +550,12 @@ class AntroponimoService {
         def lista
         int num = 0
         String tag = '=='
+
+        if (usaSecondoLivello) {
+            tag = '=='
+        } else {
+            tag = '==='
+        }// fine del blocco if-else
 
         mappa = this.getMappaAttività(listaVoci)
         mappa = this.ordinaMappa(mappa)
@@ -567,18 +577,16 @@ class AntroponimoService {
         return testo
     }// fine del metodo
 
-    public String getNomeFooter(String nome, boolean usaPrimoLivello) {
+    public String getNomeFooter(String nome) {
         String testo = ''
         String aCapo = '\n'
 
-        if (usaPrimoLivello) {
-            testo += '=Voci correlate='
-        } else {
-            testo += '==Voci correlate=='
-        }// fine del blocco if-else
+        testo += '==Voci correlate=='
         testo += aCapo
         testo += aCapo
         testo += '*[[Progetto:Antroponimi/Nomi]]'
+        testo += aCapo
+        testo += '*[[Progetto:Antroponimi/Didascalie]]'
         testo += aCapo
         testo += aCapo
         testo += '<noinclude>'
