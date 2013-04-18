@@ -11,6 +11,88 @@ class AntroponimoService {
     private String progetto = 'Progetto:Antroponimi/'
     def taglio = Preferenze.getInt('taglioAntroponimi')
 
+    def elencoNomi() {
+        int soglia = 50
+        String aCapo = '\n'
+        int k = 0
+        String numNomi = Antroponimo.count() + ''
+        String numBio = Biografia.count() + ''
+        def listaNomi
+        Antroponimo antro
+        String testo
+        String data = WikiLib.getData('DMY').trim()
+        String testoTitolo
+        String testoTabella
+        String testoFooter
+        def lista = new ArrayList()
+        def mappa = new HashMap()
+        String nome
+        int voci
+
+        testoTitolo = '<noinclude>'
+        testoTitolo += "{{StatBio|data=$data}}"
+        testoTitolo += '</noinclude>'
+        testoTitolo += aCapo
+        testoTitolo += '==Nomi=='
+        testoTitolo += aCapo
+        testoTitolo += "Elenco dei '''"
+        testoTitolo += LibTesto.formatNum(numNomi)
+        testoTitolo += "''' nomi '''differenti''' "
+        testoTitolo += "<ref>Gli apostrofi vengono rispettati. Pertanto: María, Marià, Maria, Mária, Marìa, Mariâ sono nomi diversi</ref>"
+        testoTitolo += "<ref>I nomi ''doppi'' (Maria Cristina), non vengono considerati nella loro completezza, ma si utilizza solo la componente prima dello spazio</ref>"
+        testoTitolo += "<ref>Per motivi tecnici, non vengono riportati nomi che iniziano con apici od apostrofi</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''['''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''{'''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''('''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''.'''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''&'''</ref>"
+        testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''<'''</ref>"
+        testoTitolo += " utilizzati nelle '''"
+        testoTitolo += LibTesto.formatNum(numBio)
+        testoTitolo += "''' voci biografiche"
+        testoTitolo += aCapo
+        testoTitolo += aCapo
+
+        listaNomi = Antroponimo.findAllByVociGreaterThan(soglia)
+        lista.add(['#', 'Nome', 'Voci'])
+        listaNomi?.each {
+            antro = (Antroponimo) it
+            nome = antro.nome
+            voci = antro.voci
+            if (voci > taglio) {
+                nome = '[[Lista di persone di nome ' + nome + '|' + nome + ']]'
+            }// fine del blocco if-else
+            k++
+            lista.add([k, nome, voci])
+        } // fine del ciclo each
+
+        //costruisce il testo della tabella
+        mappa.putAt('lista', lista)
+        mappa.putAt('width', '160')
+        mappa.putAt('align', TipoAllineamento.secondaSinistra)
+        testoTabella = LibBio.creaTabellaSortable(mappa)
+
+        testoFooter = aCapo
+        testoFooter += '==Note=='
+        testoFooter += aCapo
+        testoFooter += '<references/>'
+        testoFooter += aCapo
+        testoFooter += aCapo
+        testoFooter += '==Voci correlate=='
+        testoFooter += aCapo
+        testoFooter += '*[[Progetto:Antroponimi/Nomi]]'
+        testoFooter += aCapo
+        testoFooter += aCapo
+        testoFooter += '*[[Progetto:Antroponimi/Didascalie]]'
+        testoFooter += aCapo
+        testoFooter += aCapo
+        testoFooter += '<noinclude>[[Categoria:Liste di persone per nome| ]]</noinclude>'
+
+        testo = testoTitolo + testoTabella + testoFooter
+        Pagina.scriveTesto('Utente:Gac/Sandbox7', testo, 'test')
+
+    }// fine del metodo
+
     def spazzola() {
         String query
         ArrayList listaNomiCompleta
@@ -29,7 +111,7 @@ class AntroponimoService {
         //--i nomi sono differenziati in base all'accento
         listaNomiControllati?.each {
             nome = (String) it
-            nome=LibTesto.primaMaiuscola(nome)
+            nome = LibTesto.primaMaiuscola(nome)
             if (!listaNomiUniciDiversiPerAccento.contains(nome)) {
                 listaNomiUniciDiversiPerAccento.add(nome)
             }// fine del blocco if

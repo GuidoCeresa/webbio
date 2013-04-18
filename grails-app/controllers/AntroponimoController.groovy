@@ -17,8 +17,15 @@ class AntroponimoController {
         redirect(action: list)
     }// fine della closure
 
+
     def elabora = {
         antroponimoService.elaboraAllNomi()
+
+        redirect(action: list)
+    }// fine della closure
+
+    def elenconomi = {
+        antroponimoService.elencoNomi()
 
         redirect(action: list)
     }// fine della closure
