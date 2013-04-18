@@ -501,23 +501,23 @@ class AntroponimoService {
         String tagFemmina = 'F'
         ArrayList listaVociMaschili
         ArrayList listaVociFemminili
-        boolean usaSecondoLivello = true
+        boolean usaTerzoLivello = false
 
         listaVociMaschili = this.selezionaGenere(listaVoci, tagMaschio)
         listaVociFemminili = this.selezionaGenere(listaVoci, tagFemmina)
 
         if (listaVociMaschili && listaVociFemminili) {
-            usaSecondoLivello = false
+            usaTerzoLivello = true
             testo += '\n==Uomini==\n'
-            testo += this.getNomeBodyBase(listaVociMaschili, usaSecondoLivello)
+            testo += this.getNomeBodyBase(listaVociMaschili, usaTerzoLivello)
             testo += '\n==Donne==\n'
-            testo += this.getNomeBodyBase(listaVociFemminili, usaSecondoLivello)
+            testo += this.getNomeBodyBase(listaVociFemminili, usaTerzoLivello)
         } else {
             if (listaVociMaschili) {
-                testo += this.getNomeBodyBase(listaVociMaschili, usaSecondoLivello)
+                testo += this.getNomeBodyBase(listaVociMaschili, usaTerzoLivello)
             }// fine del blocco if
             if (listaVociFemminili) {
-                testo += this.getNomeBodyBase(listaVociFemminili, usaSecondoLivello)
+                testo += this.getNomeBodyBase(listaVociFemminili, usaTerzoLivello)
             }// fine del blocco if
         }// fine del blocco if-else
 
@@ -545,19 +545,19 @@ class AntroponimoService {
         return lista
     }// fine del metodo
 
-    public String getNomeBodyBase(ArrayList listaVoci, boolean usaSecondoLivello) {
+    public String getNomeBodyBase(ArrayList listaVoci, boolean usaTerzoLivello) {
         String testo = ''
         Map mappa
         String aCapo = '\n'
         String chiave
         def lista
         int num = 0
-        String tag = '=='
+        String tagIni = '=='
+        String tagEnd = '=='
 
-        if (usaSecondoLivello) {
-            tag = '=='
-        } else {
-            tag = '==='
+        if (usaTerzoLivello) {
+            tagIni = '==='
+            tagEnd = '===\n----\n'
         }// fine del blocco if-else
 
         mappa = this.getMappaAttività(listaVoci)
@@ -567,9 +567,9 @@ class AntroponimoService {
                 chiave = it.key
                 lista = mappa.get(chiave)
                 num += lista.size()
-                testo += tag
+                testo += tagIni
                 testo += chiave
-                testo += tag
+                testo += tagEnd
                 testo += aCapo
                 testo += getParagrafoDidascalia(lista)
                 testo += aCapo
