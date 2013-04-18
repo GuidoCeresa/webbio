@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09c83443-1671-48c0-b6f6-1a360d1a9483" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/webbio.war" afterPath="$PROJECT_DIR$/target/webbio.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/index.gsp" />
     </list>
     <ignored path="webbio.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$USER_HOME$/.grails/" />
     <file path="/Dummy.txt" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366303544666" ignored="false" />
-    <file path="/AntroponimoService.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366302037392" ignored="false" />
+    <file path="/AntroponimoService.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366307621920" ignored="false" />
     <file path="/a.dummy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366303543721" ignored="false" />
     <file path="/BiografiaService.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1357107556546" ignored="false" />
     <file path="$PROJECT_DIR$/../webambulanze/grails-app/controllers/webambulanze/MiliteController.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1357383529807" ignored="false" />
@@ -33,7 +33,7 @@
     <file path="$PROJECT_DIR$/../webambulanze/grails-app/conf/BootStrap.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1358528070284" ignored="false" />
     <file path="/BootStrap.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1358528048004" ignored="false" />
     <file path="$PROJECT_DIR$/../webambulanze/grails-app/services/webambulanze/MiliteService.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1357542181340" ignored="false" />
-    <file path="/*.regexp" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366222731439" ignored="false" />
+    <file path="/*.regexp" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366307568410" ignored="false" />
     <file path="$PROJECT_DIR$/../webambulanze/grails-app/controllers/webambulanze/TurnoController.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1358574822135" ignored="false" />
     <file path="/TurnoController.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1358574821823" ignored="false" />
     <file path="$PROJECT_DIR$/../webambulanze/grails-app/domain/webambulanze/Funzione.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1358527801080" ignored="false" />
@@ -54,6 +54,7 @@
     <file path="/fragment.java" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366056103375" ignored="false" />
     <file path="/list.gsp" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366222976437" ignored="false" />
     <file path="/AntroponimoController.groovy" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366223020742" ignored="false" />
+    <file path="/index.gsp" changelist="09c83443-1671-48c0-b6f6-1a360d1a9483" time="1366308103094" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,13 +137,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AntroponimoService.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AntroponimoService.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="65" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.46532845">
+            <state line="14" column="18" selection-start="485" selection-end="495" vertical-scroll-proportion="55.384617">
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BiografiaController.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="130" column="51" selection-start="4459" selection-end="4459" vertical-scroll-proportion="0.5164319">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnnoService.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/AnnoService.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="186" column="51" selection-start="6961" selection-end="7020" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pagina.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/webwiki-0.12/src/groovy/Pagina.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1206" column="0" selection-start="38724" selection-end="38724" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -184,12 +212,12 @@
         <option value="$PROJECT_DIR$/grails-app/services/CronoService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/AttivitaService.groovy" />
         <option value="$PROJECT_DIR$/test/unit/BioDidascaliaTests.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/index.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/BiografiaService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/antroponimo/list.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/AntroponimoController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/index.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy" />
       </list>
     </option>
   </component>
@@ -289,6 +317,94 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liste" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="giorno" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webbio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biografia" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -704,18 +820,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="128" y="43" width="1134" height="846" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292011" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.246875" sideWeight="0.46077034" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5041322" sideWeight="0.49409914" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3677686" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5647383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50636494" sideWeight="0.5003934" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24741448" sideWeight="0.37089872" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18870524" sideWeight="0.99080884" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18870524" sideWeight="0.99080884" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293556" sideWeight="0.5948645" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -725,7 +841,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39936358" sideWeight="0.6704708" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27757353" sideWeight="0.8112948" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27757353" sideWeight="0.4352617" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3659218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -835,55 +951,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/webwiki-0.12/src/groovy/Pagina.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="24" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/webwiki-0.12/src/groovy/Login.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="11" selection-start="2580" selection-end="2580" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/webwiki-0.12/grails-app/services/WikiService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3038" column="19" selection-start="96515" selection-end="96515" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/NazionalitaService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="51" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/groovy/BioLista.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="21" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/antroponimo/list.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="78" selection-start="933" selection-end="943" vertical-scroll-proportion="-3.8297873">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/AntroponimoController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="32" selection-start="642" selection-end="642" vertical-scroll-proportion="-17.608696">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/ListaService.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="38" selection-start="3404" selection-end="3404" vertical-scroll-proportion="0.521148">
@@ -940,12 +1007,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/AnnoService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="51" selection-start="6961" selection-end="7020" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.grails/2.1.1/projects/webbio/plugins/webwiki-0.12/src/groovy/Pagina.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1206" column="0" selection-start="38724" selection-end="38724" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/giorno/list.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/liste/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="173" selection-start="4871" selection-end="4871" vertical-scroll-proportion="0.6003135">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/AntroponimoService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="65" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.46532845">
+        <state line="14" column="18" selection-start="485" selection-end="495" vertical-scroll-proportion="55.384617">
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/BiografiaController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="51" selection-start="4459" selection-end="4459" vertical-scroll-proportion="0.5164319">
+          <folding />
         </state>
       </provider>
     </entry>

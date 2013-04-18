@@ -13,7 +13,9 @@ class AntroponimoService {
     def soglia = Preferenze.getInt('sogliaAntroponimi')
 
     def elencoNomi() {
+        Pagina pagina
         String titolo = 'Progetto:Antroponimi/Liste'
+        String summary = BiografiaService.summarySetting()
         String aCapo = '\n'
         int k = 0
         String numNomi = Antroponimo.count() + ''
@@ -93,7 +95,8 @@ class AntroponimoService {
         testoFooter += '<noinclude>[[Categoria:Liste di persone per nome| ]]</noinclude>'
 
         testo = testoTitolo + testoTabella + testoFooter
-        Pagina.scriveTesto(titolo, testo, 'test')
+        pagina = new Pagina(titolo)
+        pagina.scrive(testo, summary)
 
     }// fine del metodo
 

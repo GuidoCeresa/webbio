@@ -127,6 +127,7 @@ class BiografiaController {
         statisticheService.uploadAll()
         this.giornoAnnoUploadAll()
         antroponimoService.elaboraAllNomi()
+        antroponimoService.elencoNomi()
         listaService.listeAll()
         log.info 'Fine ciclo completo'
 
