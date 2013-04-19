@@ -9,16 +9,15 @@ class AntroponimoService {
     private boolean titoloParagrafoConLink = true
     private boolean linkAlProgetto = false
     private String progetto = 'Progetto:Antroponimi/'
-    def taglio = Preferenze.getInt('taglioAntroponimi')
-    def soglia = Preferenze.getInt('sogliaAntroponimi')
+    int taglio = Preferenze.getInt('taglioAntroponimi')
+    int soglia = Preferenze.getInt('sogliaAntroponimi')
 
     def elencoNomi() {
         Pagina pagina
-        String titolo = 'Progetto:Antroponimi/Liste'
+        String titolo = progetto + 'Liste'
         String summary = BiografiaService.summarySetting()
         String aCapo = '\n'
         int k = 0
-        String numNomi = Antroponimo.count() + ''
         String numBio = Biografia.count() + ''
         def listaNomi
         Antroponimo antro
@@ -31,17 +30,21 @@ class AntroponimoService {
         def mappa = new HashMap()
         String nome
         int voci
+        String vociTxt
 
-        listaNomi = Antroponimo.findAllByVociGreaterThan(soglia)
+        listaNomi = Antroponimo.findAllByVociGreaterThan(soglia - 1, [sort: 'voci', order: 'desc'])
         lista.add(['#', 'Nome', 'Voci'])
         listaNomi?.each {
+            vociTxt = ''
             antro = (Antroponimo) it
             nome = antro.nome
             voci = antro.voci
             if (voci > taglio) {
-                nome = '[[Lista di persone di nome ' + nome + '|' + nome + ']]'
+                nome = "'''[[Lista di persone di nome " + nome + "|" + nome + "]]'''"
             }// fine del blocco if-else
             k++
+            vociTxt = LibTesto.formatNum((String) voci)
+//            lista.add([k, nome, vociTxt])
             lista.add([k, nome, voci])
         } // fine del ciclo each
 
@@ -71,12 +74,11 @@ class AntroponimoService {
         testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''<'''</ref>"
         testoTitolo += " utilizzati nelle '''"
         testoTitolo += LibTesto.formatNum(numBio)
-        testoTitolo += "''' voci biografiche con occorrenze maggiori di '''"
+        testoTitolo += "''' voci biografiche con occorrenze maggiori od uguali a '''"
         testoTitolo += soglia
         testoTitolo += "'''"
         testoTitolo += aCapo
         testoTitolo += aCapo
-
 
         testoFooter = aCapo
         testoFooter += '==Note=='
@@ -86,13 +88,16 @@ class AntroponimoService {
         testoFooter += aCapo
         testoFooter += '==Voci correlate=='
         testoFooter += aCapo
-        testoFooter += '*[[Progetto:Antroponimi/Nomi]]'
+        testoFooter += '*[[Progetto:Antroponimi]]'
         testoFooter += aCapo
+        testoFooter += '*[[Progetto:Antroponimi/Nomi]]'
         testoFooter += aCapo
         testoFooter += '*[[Progetto:Antroponimi/Didascalie]]'
         testoFooter += aCapo
         testoFooter += aCapo
-        testoFooter += '<noinclude>[[Categoria:Liste di persone per nome| ]]</noinclude>'
+        testoFooter += '<noinclude>'
+        testoFooter += '[[Categoria:Liste di persone per nome| ]]'
+        testoFooter += '</noinclude>'
 
         testo = testoTitolo + testoTabella + testoFooter
         pagina = new Pagina(titolo)
@@ -118,6 +123,7 @@ class AntroponimoService {
         //--i nomi sono differenziati in base all'accento
         listaNomiControllati?.each {
             nome = (String) it
+            nome = nome.toLowerCase()
             nome = LibTesto.primaMaiuscola(nome)
             if (!listaNomiUniciDiversiPerAccento.contains(nome)) {
                 listaNomiUniciDiversiPerAccento.add(nome)
@@ -966,21 +972,27 @@ class AntroponimoService {
     }// fine della closure
 
     private String getDidascalieFooter() {
-        String testo = ''
+        String testoFooter = ''
         String aCapo = '\n'
-        String titolo = progetto + 'Didascalie'
 
-        testo += '==Note=='
-        testo += aCapo
-        testo += '<references/>'
-        testo += aCapo
-        testo += '==Voci correlate=='
-        testo += aCapo
-        testo += '*'
-        testo += WikiLib.setQuadre(progetto + 'Nomi')
-        testo += aCapo
+        testoFooter += '==Note=='
+        testoFooter += aCapo
+        testoFooter += '<references/>'
+        testoFooter += aCapo
+        testoFooter += '==Voci correlate=='
+        testoFooter += aCapo
+        testoFooter += '*[[Progetto:Antroponimi]]'
+        testoFooter += aCapo
+        testoFooter += '*[[Progetto:Antroponimi/Nomi]]'
+        testoFooter += aCapo
+        testoFooter += '*[[Progetto:Antroponimi/Liste]]'
+        testoFooter += aCapo
+        testoFooter += aCapo
+        testoFooter += '<noinclude>'
+        testoFooter += '[[Categoria:Liste di persone per nome| ]]'
+        testoFooter += '</noinclude>'
 
-        return testo
+        return testoFooter
     }// fine della closure
 
 
@@ -1002,6 +1014,10 @@ class AntroponimoService {
         testo += '==Voci correlate=='
         testo += aCapo
         testo += '*[[Progetto:Antroponimi]]'
+        testo += aCapo
+        testo += '*[[Progetto:Antroponimi/Liste]]'
+        testo += aCapo
+        testo += '*[[Progetto:Antroponimi/Didascalie]]'
         testo += aCapo
         testo += aCapo
         testo += '<noinclude>'
