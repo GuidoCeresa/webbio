@@ -201,6 +201,7 @@ class BiografiaController {
     // antroponimi
     def elaboraAllNomi = {
         antroponimoService.elaboraAllNomi()
+        antroponimoService.elencoNomi()
         redirect(action: list)
     }// fine della closure
 
