@@ -760,11 +760,11 @@ class AntroponimoService {
         if (nomeIn.length() < 100) {
             nomeOut = nomeIn
 
-            if (nomeOut.contains(tagSpazio)) {
-                pos = nomeOut.indexOf(tagSpazio)
-                nomeOut = nomeOut.substring(0, pos)
-                nomeOut = nomeOut.trim()
-            }// fine del blocco if
+//            if (nomeOut.contains(tagSpazio)) {
+//                pos = nomeOut.indexOf(tagSpazio)
+//                nomeOut = nomeOut.substring(0, pos)
+//                nomeOut = nomeOut.trim()
+//            }// fine del blocco if
 
             listaTagContenuto?.each {
                 if (nomeOut.contains((String) it)) {
