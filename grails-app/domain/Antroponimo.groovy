@@ -8,4 +8,4 @@ class Antroponimo {
         nome()
         voci()
     }
-}
+} //fine della classe

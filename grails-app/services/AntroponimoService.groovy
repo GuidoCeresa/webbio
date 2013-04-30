@@ -108,6 +108,27 @@ class AntroponimoService {
     def spazzola() {
         String query
         ArrayList listaNomiCompleta
+        ArrayList listaNomiUniciDiversiPerAccento
+
+        //--recupera una lista 'grezza' di tutti i nomi
+        query = 'select nome from Biografia order by nome'
+        listaNomiCompleta = Biografia.executeQuery(query)
+
+//        listaNomiCompleta = ['Maria', 'Marìa', 'María', 'Marià', 'Mária', 'Mariâ', 'Maria Cristina']
+
+        //--elimina tutto ciò che compare oltre al nome
+        listaNomiUniciDiversiPerAccento = checkAll(listaNomiCompleta)
+
+        //--cancella i records di antroponimi
+        this.cancellaTutto()
+
+        //--ricostruisce i records di antroponimi
+        this.spazzolaPacchetto(listaNomiUniciDiversiPerAccento)
+    }// fine del metodo
+
+    def spazzolaOld() {
+        String query
+        ArrayList listaNomiCompleta
         ArrayList listaNomiControllati
         ArrayList listaNomiUniciDiversiPerAccento = new ArrayList()
         String nome
@@ -123,7 +144,7 @@ class AntroponimoService {
         //--i nomi sono differenziati in base all'accento
         listaNomiControllati?.each {
             nome = (String) it
-            nome = nome.toLowerCase()
+            //nome = nome.toLowerCase()       //@todo va in errore per GianCarlo
             nome = LibTesto.primaMaiuscola(nome)
             if (!listaNomiUniciDiversiPerAccento.contains(nome)) {
                 listaNomiUniciDiversiPerAccento.add(nome)
@@ -150,25 +171,19 @@ class AntroponimoService {
 
     def spazzolaNome(String nome) {
         int dim
-        int voci = 0
+        int numVoci = 0
         ArrayList listaVociStessoNomeAccentiDiversi
         Biografia bio
         String nomeBio
 
         if (nome) {
-            listaVociStessoNomeAccentiDiversi = Biografia.findAllByNome(nome)
-            //--i nomi sono differenziati in base all'accento
-            listaVociStessoNomeAccentiDiversi?.each {
-                bio = (Biografia) it
-                nomeBio = bio.nome
-                if (nomeBio.equalsIgnoreCase(nome)) {
-                    voci++
-                }// fine del blocco if
-            } // fine del ciclo each
-            if (voci > 0) {
+            numVoci = vociNomiUniciDiversiPerAccento(nome)
+            if (numVoci > 0) {
                 dim = nome.length()
-                new Antroponimo(nome: nome, voci: voci, dim: dim).save()
-            }// fine del blocco if
+                new Antroponimo(nome: nome, voci: numVoci, dim: dim).save()
+            } else {
+                def stop // c'è qualcosa che non va
+            }// fine del blocco if-else
         }// fine del blocco if
 
     }// fine del metodo
@@ -180,12 +195,11 @@ class AntroponimoService {
         recs?.each {
             it.delete(flush: true)
         } // fine del ciclo each
-
     }// fine del metodo
 
     // Elabora tutte le pagine
     def elaboraAllNomi = {
-        ArrayList<String> listaNomi
+        ArrayList listaNomi
         String query = 'select nome from Antroponimo where voci>'
         query += taglio
         query += ' order by nome'
@@ -195,7 +209,7 @@ class AntroponimoService {
 
         //crea le pagine dei singoli nomi
         listaNomi?.each {
-            elaboraSingoloNome(it)
+            elaboraSingoloNome((String) it)
         }// fine del ciclo each
 
         //crea la pagina di controllo didascalie
@@ -258,7 +272,7 @@ class AntroponimoService {
         testo += '==Nomi=='
         testo += aCapo
         testo += 'Elenco dei '
-        testo += "'''"
+        testo += "''' "
         testo += Lib.Txt.formatNum(listaVoci.size().toString())
         testo += "'''"
         testo += ' nomi che hanno più di '
@@ -739,9 +753,13 @@ class AntroponimoService {
         ArrayList listaTagIniziali = new ArrayList()
         int pos
         String tagSpazio = ' '
+        boolean usaNomeSingolo = Preferenze.getBool('usaNomeSingolo')
 
-        listaTagContenuto.add(['<ref'])
-        listaTagContenuto.add(['-'])
+        listaTagContenuto.add('<ref')
+        listaTagContenuto.add('-')
+        listaTagContenuto.add('"')
+        listaTagContenuto.add("'")
+        listaTagContenuto.add('(')
 
         listaTagIniziali.add('"')
         listaTagIniziali.add("'")//apice
@@ -760,18 +778,24 @@ class AntroponimoService {
         if (nomeIn.length() < 100) {
             nomeOut = nomeIn
 
-//            if (nomeOut.contains(tagSpazio)) {
-//                pos = nomeOut.indexOf(tagSpazio)
-//                nomeOut = nomeOut.substring(0, pos)
-//                nomeOut = nomeOut.trim()
-//            }// fine del blocco if
-
-            listaTagContenuto?.each {
-                if (nomeOut.contains((String) it)) {
-                    pos = nomeOut.indexOf((String) it)
+            if (usaNomeSingolo) {
+                // @todo Maria e Maria Cristina sono uguali
+                if (nomeOut.contains(tagSpazio)) {
+                    pos = nomeOut.indexOf(tagSpazio)
                     nomeOut = nomeOut.substring(0, pos)
                     nomeOut = nomeOut.trim()
                 }// fine del blocco if
+            }// fine del blocco if
+
+            listaTagContenuto?.each {
+                tag = (String) it
+                if (nomeOut.contains(tag)) {
+                    pos = nomeOut.indexOf((String) it)
+                    nomeOut = nomeOut.substring(0, pos)
+                    nomeOut = nomeOut.trim()
+                    def stip
+                }// fine del blocco if
+                def stop
             } // fine del ciclo each
 
             listaTagIniziali?.each {
@@ -782,6 +806,8 @@ class AntroponimoService {
                 }// fine del blocco if
             } // fine del ciclo each
 
+            //nomeOut = nomeOut.toLowerCase()       //@todo va in errore per GianCarlo
+            nomeOut = LibTesto.primaMaiuscola(nomeOut)
         }// fine del blocco if-else
 
         return nomeOut
@@ -795,10 +821,16 @@ class AntroponimoService {
         if (listaIn && listaIn.size() > 0) {
             listaOut = new ArrayList()
 
+            //--costruisce una lista di nomi 'unici'
+            //--i nomi sono differenziati in base all'accento
             listaIn.each {
-                nomeDaControllare = it
+                nomeDaControllare = (String) it
                 nomeValido = check(nomeDaControllare)
-                listaOut.add(nomeValido)
+                if (nomeValido) {
+                    if (!listaOut.contains(nomeValido)) {
+                        listaOut.add(nomeValido)
+                    }// fine del blocco if
+                }// fine del blocco if
             }// fine del ciclo each
         }// fine del blocco if
 
@@ -996,7 +1028,7 @@ class AntroponimoService {
     }// fine della closure
 
 
-    private String getBotLink() {
+    private static String getBotLink() {
         String testo = ''
 
         testo += "'''"
@@ -1044,51 +1076,74 @@ class AntroponimoService {
     /**
      * Elabora la pagina per un singolo nome
      */
-    public boolean elaboraSingoloNome(String nome) {
-        boolean elaborata = false
-        String query
+    public void elaboraSingoloNome(String nome) {
         String testo = ''
         String titolo
-        ArrayList listaVociCompletaPerNomeSenzaDifferenzeAccenti
-        ArrayList listaVociNomiUniciDiversiPerAccento = new ArrayList()
-        Risultato risultato
-        Biografia bio
-        String nomeBio
+        ArrayList<Biografia> listaBiografieDiversePerAccento
 
         titolo = tagTitolo + nome
+        listaBiografieDiversePerAccento = biografieDiversePerAccento(nome)
 
-        query = "from Biografia where nome="
-        query += "'"
-        query += nome
-        query += "'"
-        query += " order by cognome"
+        //header
+        testo += this.getNomeHead(listaBiografieDiversePerAccento.size())
 
-        listaVociCompletaPerNomeSenzaDifferenzeAccenti = Biografia.executeQuery(query)
+        //body && footer
+        testo += this.getNomeBody(listaBiografieDiversePerAccento, nome)
 
-        //--costruisce una lista di nomi 'unici'
+        Pagina pagina = new Pagina(titolo)//@todo provvisorio
+        //pagina.scrive(testo)
+
+    }// fine del metodo
+
+    //--costruisce una lista di biografie che 'usano' il nome
+    //--se il flag usaNomeSingolo è vero, il nome della voce deve coincidere esattamente col parametro in ingresso
+    //--se il flag usaNomeSingolo è falso, il nome della voce deve iniziare col parametro
+    public ArrayList<Biografia> biografieDiversePerAccento(String nome) {
+        ArrayList<Biografia> listaBiografieDiversePerAccento = new ArrayList()
+        Biografia bio
+        String nomeBio
+        boolean usaNomeSingolo = Preferenze.getBool('usaNomeSingolo')
+        ArrayList<Biografia> listaGrezza = null
+
+        //--recupera una lista 'grezza' di tutti i nomi
+        if (usaNomeSingolo) {
+            // query = "select id from Biografia where nome='${nome}' order by nome desc"
+            listaGrezza = Biografia.findAllByNome(nome, [order: 'nome'])
+//            def c = Biografia.createCriteria()
+//            listaGrezza = c.list {
+//                like("nome", "${nome} %")
+//                order("nome", "desc")
+//            }
+        } else {
+            //query = "select id from Biografia where nome like '${nome} %' order by nome desc"
+            listaGrezza = Biografia.findAllByNome(nome, [order: 'nome'])
+        }// fine del blocco if-else
+
         //--i nomi sono differenziati in base all'accento
-        listaVociCompletaPerNomeSenzaDifferenzeAccenti?.each {
+        listaGrezza?.each {
             bio = (Biografia) it
             nomeBio = bio.nome
+            //nomeBio = nomeBio.toLowerCase()       //@todo va in errore per GianCarlo
             if (nomeBio.equalsIgnoreCase(nome)) {
-                listaVociNomiUniciDiversiPerAccento.add(bio)
+                listaBiografieDiversePerAccento.add(bio)
             }// fine del blocco if
         } // fine del ciclo each
 
-        if (listaVociNomiUniciDiversiPerAccento && listaVociNomiUniciDiversiPerAccento.size() > taglio) {
-            elaborata = true
+        return listaBiografieDiversePerAccento
+    }// fine del metodo
 
-            //header
-            testo += this.getNomeHead(listaVociNomiUniciDiversiPerAccento.size())
+    public int vociNomiUniciDiversiPerAccento(String nome) {
+        int numVoci = 0
+        ArrayList lista
 
-            //body && footer
-            testo += this.getNomeBody(listaVociNomiUniciDiversiPerAccento, nome)
-
-            Pagina pagina = new Pagina(titolo)//@todo prvvisorio
-            risultato = pagina.scrive(testo)
+        if (nome) {
+            lista = biografieDiversePerAccento(nome)
+            if (lista) {
+                numVoci = lista.size()
+            }// fine del blocco if
         }// fine del blocco if
 
-        return elaborata
+        return numVoci
     }// fine del metodo
 
     /**
@@ -1115,6 +1170,23 @@ class AntroponimoService {
         }// fine del blocco if
 
         return ricorrenze
+    }// fine del metodo
+
+    def ArrayList getListaPerNome(String nome) {
+        ArrayList lista
+        String query
+        boolean usaNomeSingolo = Preferenze.getBool('usaNomeSingolo')
+
+        //--recupera una lista 'grezza' di tutti i nomi
+        if (usaNomeSingolo) {
+            query = "select nome from Biografia where nome='${nome}' order by nome desc"
+        } else {
+            query = "select nome from Biografia where nome like '${nome} %' order by nome desc"
+        }// fine del blocco if-else
+
+        lista = Biografia.executeQuery(query)
+
+        return lista
     }// fine del metodo
 
 }// fine della classe
