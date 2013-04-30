@@ -1091,7 +1091,7 @@ class AntroponimoService {
         testo += this.getNomeBody(listaBiografieDiversePerAccento, nome)
 
         Pagina pagina = new Pagina(titolo)//@todo provvisorio
-        //pagina.scrive(testo)
+        pagina.scrive(testo)
 
     }// fine del metodo
 
