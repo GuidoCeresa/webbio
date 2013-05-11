@@ -9,10 +9,12 @@ class AntroponimoService {
     private boolean titoloParagrafoConLink = true
     private boolean linkAlProgetto = false
     private String progetto = 'Progetto:Antroponimi/'
-    int taglio = Preferenze.getInt('taglioAntroponimi')
-    int soglia = Preferenze.getInt('sogliaAntroponimi')
+    String TAG_TAGLIO = 'taglioAntroponimi'
+    String TAG_SOGLIA = 'sogliaAntroponimi'
 
     def elencoNomi() {
+        int taglio = Preferenze.getInt(TAG_TAGLIO)
+        int soglia = Preferenze.getInt(TAG_SOGLIA)
         Pagina pagina
         String titolo = progetto + 'Liste'
         String summary = BiografiaService.summarySetting()
@@ -64,7 +66,7 @@ class AntroponimoService {
         testoTitolo += LibTesto.formatNum((String) k)
         testoTitolo += "''' nomi '''differenti''' "
         testoTitolo += "<ref>Gli apostrofi vengono rispettati. Pertanto: '''María, Marià, Maria, Mária, Marìa, Mariâ''' sono nomi diversi</ref>"
-        testoTitolo += "<ref>I nomi ''doppi'' ('''Maria Cristina'''), non vengono considerati nella loro completezza, ma si utilizza solo la componente prima dello spazio</ref>"
+        testoTitolo += "<ref>I nomi ''doppi'' ('''Maria Cristina'''), vengono considerati nella loro completezza</ref>"
         testoTitolo += "<ref>Per motivi tecnici, non vengono riportati nomi che iniziano con '''apici''' od '''apostrofi'''</ref>"
         testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''['''</ref>"
         testoTitolo += "<ref>Non vengono riportati nomi che iniziano con '''{'''</ref>"
@@ -199,6 +201,7 @@ class AntroponimoService {
 
     // Elabora tutte le pagine
     def elaboraAllNomi = {
+        int taglio = Preferenze.getInt(TAG_TAGLIO)
         ArrayList listaNomi
         String query = 'select nome from Antroponimo where voci>'
         query += taglio
@@ -262,6 +265,7 @@ class AntroponimoService {
 
     public String getRiepilogoBody(ArrayList<String> listaVoci) {
         String testo = ''
+        int taglio = Preferenze.getInt(TAG_TAGLIO)
         LinkedHashMap mappa = null
         String chiave
         String nome
@@ -1061,6 +1065,7 @@ class AntroponimoService {
 
     public boolean contaVociOltreSoglia(String nome) {
         boolean valida = false
+        int taglio = Preferenze.getInt(TAG_TAGLIO)
         String query
         def num
 

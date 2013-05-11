@@ -774,13 +774,13 @@ class BioDidascalia extends BioRiga {
                 }// fine del blocco if
                 if (annoNascita) {
                     testo = tagParIni
-                    testo += this.getAnnoNascita(annoNascita, simboli)
+                    testo += this.getTestoAnnoNascita(annoNascita, simboli)
                     if (annoMorte) {
                         testo += tagParMezzo
                     }// fine del blocco if
                 }// fine del blocco if
                 if (annoMorte) {
-                    testo += this.getAnnoMorte(annoMorte, simboli)
+                    testo += this.getTestoAnnoMorte(annoMorte, simboli)
                 }// fine del blocco if
                 if (parentesi) {
                     testo += tagParEnd
@@ -805,7 +805,7 @@ class BioDidascalia extends BioRiga {
                 }// fine del blocco if
 
                 if (annoNascita) {
-                    testo += this.getAnnoNascita(annoNascita, simboli)
+                    testo += this.getTestoAnnoNascita(annoNascita, simboli)
                 }// fine del blocco if
 
                 if (trattino) {
@@ -825,7 +825,7 @@ class BioDidascalia extends BioRiga {
                 }// fine del blocco if
 
                 if (annoMorte) {
-                    testo += this.getAnnoMorte(annoMorte, simboli)
+                    testo += this.getTestoAnnoMorte(annoMorte, simboli)
                 }// fine del blocco if
 
                 if (parentesi) {
@@ -895,7 +895,7 @@ class BioDidascalia extends BioRiga {
      * Restituisce il testo dell'anno di nascita
      * Con la formattazione stabilita
      */
-    private String getAnnoNascita(String annoNascita, boolean simboli) {
+    private String getTestoAnnoNascita(String annoNascita, boolean simboli) {
         return this.getAnno(annoNascita, simboli, TAG_NATO)
     } // fine del metodo
 
@@ -903,7 +903,7 @@ class BioDidascalia extends BioRiga {
      * Restituisce il testo dell'anno di nascita
      * Con la formattazione stabilita
      */
-    private String getAnnoMorte(String annoMorte, boolean simboli) {
+    private String getTestoAnnoMorte(String annoMorte, boolean simboli) {
         return this.getAnno(annoMorte, simboli, TAG_MORTO)
     } // fine del metodo
 
